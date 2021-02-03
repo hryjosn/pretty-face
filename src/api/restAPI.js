@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { API_URL } from 'react-native-dotenv';
-import AsyncStorage from '@react-native-community/async-storage';
+import { API_URL } from '@env';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Actions } from 'react-native-router-flux';
 
 const apiUrl = API_URL;

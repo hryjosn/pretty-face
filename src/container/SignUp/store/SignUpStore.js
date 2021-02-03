@@ -2,7 +2,6 @@ import { action, extendObservable } from 'mobx';
 import storeAction from '@store/storeAction';
 import { callSignUpUser } from '@api';
 import { LoginStore } from '@store';
-import auth from '@react-native-firebase/auth';
 import { isEmail, isLength, isMobilePhone } from 'validator';
 
 const initState = {

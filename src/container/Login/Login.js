@@ -42,7 +42,7 @@ const Login = () => {
                         fontWeight: '500',
                         letterSpacing: 3,
                     }}>
-                    Hoja
+                    Pretty face
                 </MyText>
             </View>
             <View

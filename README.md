@@ -1,2 +1,2 @@
-# Hoja
-An amazing food platform
+# Pretty Face
+A group with pretty guys

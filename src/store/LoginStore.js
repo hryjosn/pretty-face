@@ -3,7 +3,7 @@ import storeAction from '@store/storeAction';
 import { Actions } from 'react-native-router-flux';
 import { isEmail, isMobilePhone, isLength } from 'validator';
 import { callLoginUser } from '@api';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const initState = {
     isFetching: false,

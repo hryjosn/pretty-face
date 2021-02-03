@@ -1,6 +1,6 @@
 import { post,get } from './restAPI';
 import axios from 'axios';
-import { API_URL } from 'react-native-dotenv';
+import { API_URL } from '@env';
 
 
 const endPoint = API_URL;
