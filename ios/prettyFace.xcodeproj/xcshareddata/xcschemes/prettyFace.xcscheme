@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "Hoja.app"
-               BlueprintName = "Hoja"
-               ReferencedContainer = "container:Hoja.xcodeproj">
+               BuildableName = "prettyFace.app"
+               BlueprintName = "prettyFace"
+               ReferencedContainer = "container:prettyFace.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "HojaTests.xctest"
-               BlueprintName = "HojaTests"
-               ReferencedContainer = "container:Hoja.xcodeproj">
+               BuildableName = "prettyFaceTests.xctest"
+               BlueprintName = "prettyFaceTests"
+               ReferencedContainer = "container:prettyFace.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Hoja.app"
-            BlueprintName = "Hoja"
-            ReferencedContainer = "container:Hoja.xcodeproj">
+            BuildableName = "prettyFace.app"
+            BlueprintName = "prettyFace"
+            ReferencedContainer = "container:prettyFace.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Hoja.app"
-            BlueprintName = "Hoja"
-            ReferencedContainer = "container:Hoja.xcodeproj">
+            BuildableName = "prettyFace.app"
+            BlueprintName = "prettyFace"
+            ReferencedContainer = "container:prettyFace.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

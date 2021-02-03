@@ -7,18 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* HojaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* HojaTests.m */; };
+		00E356F31AD99517003FC87E /* prettyFaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* prettyFaceTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2DCD954D1E0B4F2C00145EB5 /* HojaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* HojaTests.m */; };
-		62B39863C410DF8F19AC80B1 /* libPods-Hoja-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 096ACC5839231D3C494D4258 /* libPods-Hoja-tvOS.a */; };
-		96DA7DC7B2CDFDEB683D261F /* libPods-Hoja.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B26DD65D418EDB5FF205548 /* libPods-Hoja.a */; };
-		98F920F560462BC3E407D720 /* libPods-Hoja-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 414171BE348AB70940E993BC /* libPods-Hoja-tvOSTests.a */; };
-		B6E0F8B6A5F0C0C1DDD4F4E4 /* libPods-Hoja-HojaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56ABA07E59D936A3A60F85B0 /* libPods-Hoja-HojaTests.a */; };
+		2DCD954D1E0B4F2C00145EB5 /* prettyFaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* prettyFaceTests.m */; };
+		62B39863C410DF8F19AC80B1 /* libPods-prettyFace-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 096ACC5839231D3C494D4258 /* libPods-prettyFace-tvOS.a */; };
+		96DA7DC7B2CDFDEB683D261F /* libPods-prettyFace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B26DD65D418EDB5FF205548 /* libPods-prettyFace.a */; };
+		98F920F560462BC3E407D720 /* libPods-prettyFace-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 414171BE348AB70940E993BC /* libPods-prettyFace-tvOSTests.a */; };
+		B6E0F8B6A5F0C0C1DDD4F4E4 /* libPods-prettyFace-prettyFaceTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56ABA07E59D936A3A60F85B0 /* libPods-prettyFace-prettyFaceTests.a */; };
 		FC41543E243D83A700D5EDD2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC41543D243D83A700D5EDD2 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -28,57 +28,57 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = Hoja;
+			remoteInfo = prettyFace;
 		};
 		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
-			remoteInfo = "Hoja-tvOS";
+			remoteInfo = "prettyFace-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* HojaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HojaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* prettyFaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = prettyFaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* HojaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HojaTests.m; sourceTree = "<group>"; };
-		052DC0B9E4EAA1EDD1F56725 /* Pods-Hoja.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hoja.release.xcconfig"; path = "Target Support Files/Pods-Hoja/Pods-Hoja.release.xcconfig"; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* prettyFaceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = prettyFaceTests.m; sourceTree = "<group>"; };
+		052DC0B9E4EAA1EDD1F56725 /* Pods-prettyFace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prettyFace.release.xcconfig"; path = "Target Support Files/Pods-prettyFace/Pods-prettyFace.release.xcconfig"; sourceTree = "<group>"; };
 		08A5BDD4C4884DBC91CC345F /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
-		096ACC5839231D3C494D4258 /* libPods-Hoja-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Hoja-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		096ACC5839231D3C494D4258 /* libPods-prettyFace-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-prettyFace-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CD82A255C8F4B19B89A9067 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
-		12183D805122150F79082A2C /* Pods-Hoja.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hoja.debug.xcconfig"; path = "Target Support Files/Pods-Hoja/Pods-Hoja.debug.xcconfig"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* Hoja.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hoja.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Hoja/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Hoja/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Hoja/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Hoja/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Hoja/main.m; sourceTree = "<group>"; };
+		12183D805122150F79082A2C /* Pods-prettyFace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prettyFace.debug.xcconfig"; path = "Target Support Files/Pods-prettyFace/Pods-prettyFace.debug.xcconfig"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* prettyFace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = prettyFace.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = prettyFace/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = prettyFace/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = prettyFace/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = prettyFace/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = prettyFace/main.m; sourceTree = "<group>"; };
 		196F5A5F0BB441EB8DEC401A /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		25EEF9F1EC8140988CB8960F /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
-		2D02E47B1E0B4A5D006451C7 /* Hoja-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hoja-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E4901E0B4A5D006451C7 /* Hoja-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hoja-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		414171BE348AB70940E993BC /* libPods-Hoja-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Hoja-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4B26DD65D418EDB5FF205548 /* libPods-Hoja.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Hoja.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		56ABA07E59D936A3A60F85B0 /* libPods-Hoja-HojaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Hoja-HojaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E47B1E0B4A5D006451C7 /* prettyFace-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "prettyFace-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E4901E0B4A5D006451C7 /* prettyFace-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "prettyFace-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		414171BE348AB70940E993BC /* libPods-prettyFace-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-prettyFace-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B26DD65D418EDB5FF205548 /* libPods-prettyFace.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-prettyFace.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		56ABA07E59D936A3A60F85B0 /* libPods-prettyFace-prettyFaceTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-prettyFace-prettyFaceTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63F556CA9C6E461398B4F2C3 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
 		69CF8FBABCD44B0E8A77E520 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		80DDC895FCDD488992536059 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
 		849A728630914D81AD0A3FFD /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
-		8923030653CD2BA92F53E6A6 /* Pods-Hoja-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hoja-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Hoja-tvOS/Pods-Hoja-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		9E75FE447BCF581CD60E7A5C /* Pods-Hoja-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hoja-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Hoja-tvOSTests/Pods-Hoja-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		8923030653CD2BA92F53E6A6 /* Pods-prettyFace-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prettyFace-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-prettyFace-tvOS/Pods-prettyFace-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		9E75FE447BCF581CD60E7A5C /* Pods-prettyFace-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prettyFace-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-prettyFace-tvOSTests/Pods-prettyFace-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		A6E2C3CE71E2404DA29B519F /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		A7BE2D792C834F74A4716BC4 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
-		AA480D66C07EFCA79C023046 /* Pods-Hoja-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hoja-tvOS.release.xcconfig"; path = "Target Support Files/Pods-Hoja-tvOS/Pods-Hoja-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		AA480D66C07EFCA79C023046 /* Pods-prettyFace-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prettyFace-tvOS.release.xcconfig"; path = "Target Support Files/Pods-prettyFace-tvOS/Pods-prettyFace-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		AB3E486E88554A7EA279E543 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		AFB24EF1B135417D98AD3D42 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		B3DFA6AA394A4A929560C487 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		BC511531DE3D4A898DF09057 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		C4F45A77181F4BD496BC9AA0 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
-		C65901F22C4F97B2A60917A3 /* Pods-Hoja-HojaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hoja-HojaTests.debug.xcconfig"; path = "Target Support Files/Pods-Hoja-HojaTests/Pods-Hoja-HojaTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D819E60EA2F71EBA6CF98EEE /* Pods-Hoja-HojaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hoja-HojaTests.release.xcconfig"; path = "Target Support Files/Pods-Hoja-HojaTests/Pods-Hoja-HojaTests.release.xcconfig"; sourceTree = "<group>"; };
-		DD7D0EC8128E60B05E84F26C /* Pods-Hoja-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hoja-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Hoja-tvOSTests/Pods-Hoja-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C65901F22C4F97B2A60917A3 /* Pods-prettyFace-prettyFaceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prettyFace-prettyFaceTests.debug.xcconfig"; path = "Target Support Files/Pods-prettyFace-prettyFaceTests/Pods-prettyFace-prettyFaceTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D819E60EA2F71EBA6CF98EEE /* Pods-prettyFace-prettyFaceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prettyFace-prettyFaceTests.release.xcconfig"; path = "Target Support Files/Pods-prettyFace-prettyFaceTests/Pods-prettyFace-prettyFaceTests.release.xcconfig"; sourceTree = "<group>"; };
+		DD7D0EC8128E60B05E84F26C /* Pods-prettyFace-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prettyFace-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-prettyFace-tvOSTests/Pods-prettyFace-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		FC41543D243D83A700D5EDD2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -90,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6E0F8B6A5F0C0C1DDD4F4E4 /* libPods-Hoja-HojaTests.a in Frameworks */,
+				B6E0F8B6A5F0C0C1DDD4F4E4 /* libPods-prettyFace-prettyFaceTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96DA7DC7B2CDFDEB683D261F /* libPods-Hoja.a in Frameworks */,
+				96DA7DC7B2CDFDEB683D261F /* libPods-prettyFace.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,7 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62B39863C410DF8F19AC80B1 /* libPods-Hoja-tvOS.a in Frameworks */,
+				62B39863C410DF8F19AC80B1 /* libPods-prettyFace-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,20 +114,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98F920F560462BC3E407D720 /* libPods-Hoja-tvOSTests.a in Frameworks */,
+				98F920F560462BC3E407D720 /* libPods-prettyFace-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* HojaTests */ = {
+		00E356EF1AD99517003FC87E /* prettyFaceTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* HojaTests.m */,
+				00E356F21AD99517003FC87E /* prettyFaceTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = HojaTests;
+			path = prettyFaceTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -138,7 +138,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* Hoja */ = {
+		13B07FAE1A68108700A75B9A /* prettyFace */ = {
 			isa = PBXGroup;
 			children = (
 				FC41543D243D83A700D5EDD2 /* GoogleService-Info.plist */,
@@ -149,7 +149,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = Hoja;
+			name = prettyFace;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -157,10 +157,10 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				4B26DD65D418EDB5FF205548 /* libPods-Hoja.a */,
-				56ABA07E59D936A3A60F85B0 /* libPods-Hoja-HojaTests.a */,
-				096ACC5839231D3C494D4258 /* libPods-Hoja-tvOS.a */,
-				414171BE348AB70940E993BC /* libPods-Hoja-tvOSTests.a */,
+				4B26DD65D418EDB5FF205548 /* libPods-prettyFace.a */,
+				56ABA07E59D936A3A60F85B0 /* libPods-prettyFace-prettyFaceTests.a */,
+				096ACC5839231D3C494D4258 /* libPods-prettyFace-tvOS.a */,
+				414171BE348AB70940E993BC /* libPods-prettyFace-tvOSTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -175,9 +175,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* Hoja */,
+				13B07FAE1A68108700A75B9A /* prettyFace */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* HojaTests */,
+				00E356EF1AD99517003FC87E /* prettyFaceTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				8F4285BD7124B17CB39B391B /* Pods */,
@@ -191,10 +191,10 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* Hoja.app */,
-				00E356EE1AD99517003FC87E /* HojaTests.xctest */,
-				2D02E47B1E0B4A5D006451C7 /* Hoja-tvOS.app */,
-				2D02E4901E0B4A5D006451C7 /* Hoja-tvOSTests.xctest */,
+				13B07F961A680F5B00A75B9A /* prettyFace.app */,
+				00E356EE1AD99517003FC87E /* prettyFaceTests.xctest */,
+				2D02E47B1E0B4A5D006451C7 /* prettyFace-tvOS.app */,
+				2D02E4901E0B4A5D006451C7 /* prettyFace-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -202,14 +202,14 @@
 		8F4285BD7124B17CB39B391B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				12183D805122150F79082A2C /* Pods-Hoja.debug.xcconfig */,
-				052DC0B9E4EAA1EDD1F56725 /* Pods-Hoja.release.xcconfig */,
-				C65901F22C4F97B2A60917A3 /* Pods-Hoja-HojaTests.debug.xcconfig */,
-				D819E60EA2F71EBA6CF98EEE /* Pods-Hoja-HojaTests.release.xcconfig */,
-				8923030653CD2BA92F53E6A6 /* Pods-Hoja-tvOS.debug.xcconfig */,
-				AA480D66C07EFCA79C023046 /* Pods-Hoja-tvOS.release.xcconfig */,
-				DD7D0EC8128E60B05E84F26C /* Pods-Hoja-tvOSTests.debug.xcconfig */,
-				9E75FE447BCF581CD60E7A5C /* Pods-Hoja-tvOSTests.release.xcconfig */,
+				12183D805122150F79082A2C /* Pods-prettyFace.debug.xcconfig */,
+				052DC0B9E4EAA1EDD1F56725 /* Pods-prettyFace.release.xcconfig */,
+				C65901F22C4F97B2A60917A3 /* Pods-prettyFace-prettyFaceTests.debug.xcconfig */,
+				D819E60EA2F71EBA6CF98EEE /* Pods-prettyFace-prettyFaceTests.release.xcconfig */,
+				8923030653CD2BA92F53E6A6 /* Pods-prettyFace-tvOS.debug.xcconfig */,
+				AA480D66C07EFCA79C023046 /* Pods-prettyFace-tvOS.release.xcconfig */,
+				DD7D0EC8128E60B05E84F26C /* Pods-prettyFace-tvOSTests.debug.xcconfig */,
+				9E75FE447BCF581CD60E7A5C /* Pods-prettyFace-tvOSTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -240,9 +240,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* HojaTests */ = {
+		00E356ED1AD99517003FC87E /* prettyFaceTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "HojaTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "prettyFaceTests" */;
 			buildPhases = (
 				A0968E65098ACB980D7B02BE /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -255,14 +255,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = HojaTests;
-			productName = HojaTests;
-			productReference = 00E356EE1AD99517003FC87E /* HojaTests.xctest */;
+			name = prettyFaceTests;
+			productName = prettyFaceTests;
+			productReference = 00E356EE1AD99517003FC87E /* prettyFaceTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* Hoja */ = {
+		13B07F861A680F5B00A75B9A /* prettyFace */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Hoja" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "prettyFace" */;
 			buildPhases = (
 				FD6DABC5FB65C5B77C2705D1 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -277,14 +277,14 @@
 			);
 			dependencies = (
 			);
-			name = Hoja;
-			productName = Hoja;
-			productReference = 13B07F961A680F5B00A75B9A /* Hoja.app */;
+			name = prettyFace;
+			productName = prettyFace;
+			productReference = 13B07F961A680F5B00A75B9A /* prettyFace.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E47A1E0B4A5D006451C7 /* Hoja-tvOS */ = {
+		2D02E47A1E0B4A5D006451C7 /* prettyFace-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Hoja-tvOS" */;
+			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "prettyFace-tvOS" */;
 			buildPhases = (
 				C3C5424C8C7DDB1661732790 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
@@ -297,14 +297,14 @@
 			);
 			dependencies = (
 			);
-			name = "Hoja-tvOS";
-			productName = "Hoja-tvOS";
-			productReference = 2D02E47B1E0B4A5D006451C7 /* Hoja-tvOS.app */;
+			name = "prettyFace-tvOS";
+			productName = "prettyFace-tvOS";
+			productReference = 2D02E47B1E0B4A5D006451C7 /* prettyFace-tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E48F1E0B4A5D006451C7 /* Hoja-tvOSTests */ = {
+		2D02E48F1E0B4A5D006451C7 /* prettyFace-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Hoja-tvOSTests" */;
+			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "prettyFace-tvOSTests" */;
 			buildPhases = (
 				63FA383106F8B7F0FA98156E /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
@@ -316,9 +316,9 @@
 			dependencies = (
 				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
 			);
-			name = "Hoja-tvOSTests";
-			productName = "Hoja-tvOSTests";
-			productReference = 2D02E4901E0B4A5D006451C7 /* Hoja-tvOSTests.xctest */;
+			name = "prettyFace-tvOSTests";
+			productName = "prettyFace-tvOSTests";
+			productReference = 2D02E4901E0B4A5D006451C7 /* prettyFace-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -348,7 +348,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Hoja" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "prettyFace" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -361,10 +361,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* Hoja */,
-				00E356ED1AD99517003FC87E /* HojaTests */,
-				2D02E47A1E0B4A5D006451C7 /* Hoja-tvOS */,
-				2D02E48F1E0B4A5D006451C7 /* Hoja-tvOSTests */,
+				13B07F861A680F5B00A75B9A /* prettyFace */,
+				00E356ED1AD99517003FC87E /* prettyFaceTests */,
+				2D02E47A1E0B4A5D006451C7 /* prettyFace-tvOS */,
+				2D02E48F1E0B4A5D006451C7 /* prettyFace-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -438,7 +438,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Hoja/Pods-Hoja-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-prettyFace/Pods-prettyFace-resources.sh",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
@@ -479,7 +479,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Hoja/Pods-Hoja-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-prettyFace/Pods-prettyFace-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4764DEC60C83BE9F468124DD /* [CP-User] [RNFB] Core Configuration */ = {
@@ -507,7 +507,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Hoja-tvOSTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-prettyFace-tvOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -520,7 +520,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Hoja-HojaTests/Pods-Hoja-HojaTests-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-prettyFace-prettyFaceTests/Pods-prettyFace-prettyFaceTests-resources.sh",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
@@ -561,7 +561,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Hoja-HojaTests/Pods-Hoja-HojaTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-prettyFace-prettyFaceTests/Pods-prettyFace-prettyFaceTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A0968E65098ACB980D7B02BE /* [CP] Check Pods Manifest.lock */ = {
@@ -579,7 +579,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Hoja-HojaTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-prettyFace-prettyFaceTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -601,7 +601,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Hoja-tvOS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-prettyFace-tvOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -661,7 +661,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Hoja-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-prettyFace-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -675,7 +675,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* HojaTests.m in Sources */,
+				00E356F31AD99517003FC87E /* prettyFaceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -701,7 +701,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DCD954D1E0B4F2C00145EB5 /* HojaTests.m in Sources */,
+				2DCD954D1E0B4F2C00145EB5 /* prettyFaceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -710,12 +710,12 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* Hoja */;
+			target = 13B07F861A680F5B00A75B9A /* prettyFace */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D02E47A1E0B4A5D006451C7 /* Hoja-tvOS */;
+			target = 2D02E47A1E0B4A5D006451C7 /* prettyFace-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -727,14 +727,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C65901F22C4F97B2A60917A3 /* Pods-Hoja-HojaTests.debug.xcconfig */;
+			baseConfigurationReference = C65901F22C4F97B2A60917A3 /* Pods-prettyFace-prettyFaceTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = HojaTests/Info.plist;
+				INFOPLIST_FILE = prettyFaceTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -744,17 +744,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hoja.app/Hoja";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/prettyFace.app/prettyFace";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D819E60EA2F71EBA6CF98EEE /* Pods-Hoja-HojaTests.release.xcconfig */;
+			baseConfigurationReference = D819E60EA2F71EBA6CF98EEE /* Pods-prettyFace-prettyFaceTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = HojaTests/Info.plist;
+				INFOPLIST_FILE = prettyFaceTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -764,13 +764,13 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hoja.app/Hoja";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/prettyFace.app/prettyFace";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 12183D805122150F79082A2C /* Pods-Hoja.debug.xcconfig */;
+			baseConfigurationReference = 12183D805122150F79082A2C /* Pods-prettyFace.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -781,7 +781,7 @@
 					"$(inherited)",
 					"FB_SONARKIT_ENABLED=1",
 				);
-				INFOPLIST_FILE = Hoja/Info.plist;
+				INFOPLIST_FILE = prettyFace/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -789,7 +789,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hoja;
-				PRODUCT_NAME = Hoja;
+				PRODUCT_NAME = prettyFace;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -798,13 +798,13 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 052DC0B9E4EAA1EDD1F56725 /* Pods-Hoja.release.xcconfig */;
+			baseConfigurationReference = 052DC0B9E4EAA1EDD1F56725 /* Pods-prettyFace.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U3P934U794;
-				INFOPLIST_FILE = Hoja/Info.plist;
+				INFOPLIST_FILE = prettyFace/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -812,7 +812,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hoja;
-				PRODUCT_NAME = Hoja;
+				PRODUCT_NAME = prettyFace;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -820,7 +820,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8923030653CD2BA92F53E6A6 /* Pods-Hoja-tvOS.debug.xcconfig */;
+			baseConfigurationReference = 8923030653CD2BA92F53E6A6 /* Pods-prettyFace-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -831,14 +831,14 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Hoja-tvOS/Info.plist";
+				INFOPLIST_FILE = "prettyFace-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.Hoja-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.prettyFace-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -848,7 +848,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA480D66C07EFCA79C023046 /* Pods-Hoja-tvOS.release.xcconfig */;
+			baseConfigurationReference = AA480D66C07EFCA79C023046 /* Pods-prettyFace-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -859,14 +859,14 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Hoja-tvOS/Info.plist";
+				INFOPLIST_FILE = "prettyFace-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.Hoja-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.prettyFace-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -876,7 +876,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DD7D0EC8128E60B05E84F26C /* Pods-Hoja-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = DD7D0EC8128E60B05E84F26C /* Pods-prettyFace-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -886,24 +886,24 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Hoja-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "prettyFace-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.Hoja-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.prettyFace-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hoja-tvOS.app/Hoja-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/prettyFace-tvOS.app/prettyFace-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Debug;
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9E75FE447BCF581CD60E7A5C /* Pods-Hoja-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = 9E75FE447BCF581CD60E7A5C /* Pods-prettyFace-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -913,17 +913,17 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Hoja-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "prettyFace-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.Hoja-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.prettyFace-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hoja-tvOS.app/Hoja-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/prettyFace-tvOS.app/prettyFace-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
@@ -1044,7 +1044,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "HojaTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "prettyFaceTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -1053,7 +1053,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Hoja" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "prettyFace" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -1062,7 +1062,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Hoja-tvOS" */ = {
+		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "prettyFace-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4971E0B4A5E006451C7 /* Debug */,
@@ -1071,7 +1071,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Hoja-tvOSTests" */ = {
+		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "prettyFace-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
@@ -1080,7 +1080,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Hoja" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "prettyFace" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
