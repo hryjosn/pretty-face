@@ -1,13 +1,13 @@
 import React from 'react';
 import { TouchableOpacity, Dimensions } from 'react-native';
-import { MyText } from './MyText';
+import { Text } from './Text';
 const { width } = Dimensions.get('window');
 export const Button = ({ onPress, children, style }) => {
     return (
         <TouchableOpacity
             onPress={onPress}
             style={{ ...styles.buttonStyle, ...style }}>
-            <MyText style={styles.buttonTextStyle}>{children}</MyText>
+            <Text style={styles.buttonTextStyle}>{children}</Text>
         </TouchableOpacity>
     );
 };
@@ -15,9 +15,9 @@ export const Button = ({ onPress, children, style }) => {
 export const TextButton = ({ onPress, color, children, fontSize }) => {
     return (
         <TouchableOpacity onPress={onPress}>
-            <MyText style={[styles.textButtonTextStyle, { color, fontSize }]}>
+            <Text style={[styles.textButtonTextStyle, { color, fontSize }]}>
                 {children}
-            </MyText>
+            </Text>
         </TouchableOpacity>
     );
 };
@@ -56,9 +56,9 @@ export const RectangleButton = ({
             disabled={disabled}
             onPress={onPress}
             style={[rectangleButtonStyle, { backgroundColor, borderColor }]}>
-            <MyText style={[rectangleButtonTextStyle, { color }]}>
+            <Text style={[rectangleButtonTextStyle, { color }]}>
                 {children}
-            </MyText>
+            </Text>
         </TouchableOpacity>
     );
 };

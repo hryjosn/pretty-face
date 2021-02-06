@@ -8,7 +8,6 @@ const MyText = (props) => {
         </Text>
     );
 };
-
 export default MyText;
 const styles = StyleSheet.create({
     fontStyle: {

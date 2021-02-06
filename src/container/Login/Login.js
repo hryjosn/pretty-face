@@ -1,78 +1,63 @@
 import React, { useState } from 'react';
-import {
-    StyleSheet,
-    View,
-    TextInput,
-    Dimensions,
-} from 'react-native';
-import { Button, TextButton, MyText, RectangleButton } from '@components';
-import LoginTab from './component/LoginTab';
-import SignupTab from './component/SignupTab';
-import Page from '@components/Page/Page';
+import { StyleSheet, View } from 'react-native';
+import { Text, Input, Page } from '@components';
 import { observer } from 'mobx-react';
 import { useStores } from '@store';
-import style from '@styles/globalStyle';
-import { Actions } from 'react-native-router-flux';
-import { checkInput } from '../../helpers';
-import { Translate } from '../../translations';
-// import LogoIcon from '../../image/logo.png';
-
-const { width } = Dimensions.get('window');
-
-const { container } = style;
+import CountryPicker, {
+    getAllCountries,
+} from 'react-native-country-picker-modal';
 
 const Login = () => {
-    const [selectedLogin, setSelectedLogin] = useState(true);
-    const buttonColor = (selected) => selected ? 'black' : 'gray';
-    const fontSize = (selected) => selected ? 21 : 16;
-
-
+    const [countryCode, setCountryCode] = useState('TW');
+    const [callingCode, setCallingCode] = useState('886');
+    const onSelect = (country) => {
+        setCountryCode(country.cca2);
+        setCallingCode(country?.callingCode);
+    };
     return (
         <Page>
             <View
                 style={{
-                    flex: 1,
-                    // backgroundColor: 'pink',
-                    justifyContent: 'flex-end',
                     alignItems: 'center',
                 }}>
-                <MyText
+                <Text
                     style={{
                         fontSize: 36,
-                        fontWeight: '500',
+                        fontWeight: '900',
                         letterSpacing: 3,
                     }}>
                     Pretty face
-                </MyText>
+                </Text>
             </View>
             <View
                 style={{
                     flex: 1,
-                    // backgroundColor: 'yellow',
                     justifyContent: 'center',
-                    alignItems: 'flex-end',
-                    flexDirection: 'row',
+                    alignItems: 'center',
                 }}>
-                <TextButton
-                    onPress={() => setSelectedLogin(true)}
-                    color={buttonColor(selectedLogin)}
-                    fontSize={fontSize(selectedLogin)}
-                >
-                    {Translate.login}
-                </TextButton>
-                <View style={{ width: 20 }}/>
-                <TextButton
-                    onPress={() => setSelectedLogin(false)}
-                    color={buttonColor(!selectedLogin)}
-                    fontSize={fontSize(!selectedLogin)}
-                >
-                    {Translate.register}
-                </TextButton>
+                <View
+                    style={{
+                        alignItems: 'center',
+                        flexDirection: 'row',
+                        marginHorizontal: 20,
+                        borderWidth: 2,
+                        borderColor: 'black',
+                        borderRadius: 10,
+                        padding: 20,
+                    }}>
+                    <CountryPicker
+                        withEmoji={true}
+                        fullWidth
+                        withCloseButton
+                        onSelect={onSelect}
+                        withFilter
+                        withAlphaFilter
+                        countryCode={countryCode}
+                    />
+                    <Text style={{ fontSize: 20 }}>+{callingCode}</Text>
+                    <Input style={{ flex: 1, marginHorizontal:10 }} />
+                </View>
             </View>
-            {
-                selectedLogin ? <LoginTab/> : <SignupTab/>
-            }
-
         </Page>
     );
 };

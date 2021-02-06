@@ -1,1 +1,1 @@
-export default from './MyText';
+export default from './Text';
