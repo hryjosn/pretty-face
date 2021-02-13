@@ -16,7 +16,6 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { restaurantSample } from '@image';
 import ShopDetailModal from '@container/Shop/components/ShopDetailModal';
 
-
 const Shop = () => {
     const { ShopStore, ShopDetailModalStore } = useStores();
     const { openModal, updateData } = ShopDetailModalStore;
@@ -67,10 +66,11 @@ const Shop = () => {
                             paddingHorizontal: 15,
                             alignItems: 'flex-end',
                         }}>
-                        <TouchableOpacity onPress={() => {
-                            openModal()
-                        }}>
-                            <Icon name={'edit'} size={20}/>
+                        <TouchableOpacity
+                            onPress={() => {
+                                openModal();
+                            }}>
+                            <Icon name={'edit'} size={20} />
                         </TouchableOpacity>
                     </View>
                     <Text style={{ fontSize: 20, alignSelf: 'center' }}>
@@ -92,18 +92,29 @@ const Shop = () => {
                         {menuItems.map((item, index) => {
                             const { name, price, subtitle, photo_url } = item;
                             return (
-                                <View key={`item_${index}`} style={{ ...styles.rowStyle, marginBottom: 10 }}>
+                                <View
+                                    key={`item_${index}`}
+                                    style={{
+                                        ...styles.rowStyle,
+                                        marginBottom: 10,
+                                    }}>
                                     <View
                                         style={{
                                             ...styles.signboardStyle,
                                             height: 100,
                                             width: 100,
                                         }}>
-                                        <Image source={{ uri: photo_url }} style={{ flex: 1 }}/>
+                                        <Image
+                                            source={{ uri: photo_url }}
+                                            style={{ flex: 1 }}
+                                        />
                                     </View>
                                     <View style={{ alignSelf: 'center' }}>
                                         <Text
-                                            style={{ fontSize: 20, textAlign: 'left' }}>
+                                            style={{
+                                                fontSize: 20,
+                                                textAlign: 'left',
+                                            }}>
                                             {name}
                                         </Text>
                                         <Text style={styles.descriptionStyle}>
@@ -118,11 +129,10 @@ const Shop = () => {
                                 </View>
                             );
                         })}
-
                     </View>
                 </ScrollView>
             </View>
-            <ShopDetailModal/>
+            <ShopDetailModal />
         </Page>
     );
 };

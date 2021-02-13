@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StatusBar, StyleSheet,SafeAreaView } from 'react-native';
+import { View, StatusBar, StyleSheet, SafeAreaView } from 'react-native';
 import { isIphoneX } from '@helpers';
 import { observer } from 'mobx-react';
 

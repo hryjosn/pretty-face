@@ -31,7 +31,7 @@ const SceneRouter = () => {
                     <Scene key="Login" component={Login} hideNavBar />
                     <Scene key="SignUp" component={SignUp} hideNavBar />
                 </Scene>
-                <Scene key="Main" hideNavBar >
+                <Scene key="Main" hideNavBar>
                     <Scene
                         key="tabBar"
                         tabs
@@ -66,11 +66,7 @@ const SceneRouter = () => {
                                 component={Profile}
                                 hideNavBar
                             />
-                            <Scene
-                                key="Shop"
-                                component={Shop}
-                                hideNavBar
-                            />
+                            <Scene key="Shop" component={Shop} hideNavBar />
                         </Scene>
                     </Scene>
                 </Scene>

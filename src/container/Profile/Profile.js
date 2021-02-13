@@ -1,5 +1,11 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity, Text, ImageBackground } from 'react-native';
+import {
+    View,
+    StyleSheet,
+    TouchableOpacity,
+    Text,
+    ImageBackground,
+} from 'react-native';
 import { CircleButton, RectangleButton, Header } from '@components';
 import { useStores } from '@store';
 import Page from '@components/Page/Page';
@@ -15,11 +21,10 @@ const Profile = () => {
     const { getShopInfo } = ShopStore;
     return (
         <Page>
-            <Header headerText={"個人檔案"} />
+            <Header headerText={'個人檔案'} />
             <ImageBackground source={restaurantSample} style={{ flex: 1 }}>
-                <View style={{ ...styles.rowStyle, marginHorizontal: 15 }}>
-
-                </View>
+                <View
+                    style={{ ...styles.rowStyle, marginHorizontal: 15 }}></View>
                 <View
                     style={{
                         ...styles.signboardStyle,
@@ -28,15 +33,11 @@ const Profile = () => {
                         backgroundColor: 'white',
                         position: 'relative',
                         top: 120,
-                    }}>
-
-                </View>
+                    }}></View>
             </ImageBackground>
             <View style={styles.container}>
-
                 <View style={{ alignItems: 'center' }}>
-                    <CircleButton>
-                    </CircleButton>
+                    <CircleButton></CircleButton>
                     <Text style={{ fontSize: 20, marginTop: 20 }}>姓名</Text>
 
                     <View style={{ marginVertical: 20 }}>
@@ -52,10 +53,7 @@ const Profile = () => {
                             我的餐廳
                         </Text>
                     </TouchableOpacity>
-
                 </View>
-
-
             </View>
             <View style={{ alignItems: 'center' }}>
                 <RectangleButton
@@ -67,7 +65,6 @@ const Profile = () => {
                     登出
                 </RectangleButton>
             </View>
-
         </Page>
     );
 };

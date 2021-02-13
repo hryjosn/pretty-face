@@ -1,63 +1,16 @@
 import React, { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
-import { Text, Input, Page } from '@components';
+import { StyleSheet, View, TextInput } from 'react-native';
+import { Text, Input, Page, Button } from '@components';
 import { observer } from 'mobx-react';
 import { useStores } from '@store';
-import CountryPicker, {
-    getAllCountries,
-} from 'react-native-country-picker-modal';
+import PhoneAuthentication from './components/PhoneAuthentication/PhoneAuthentication';
 
 const Login = () => {
-    const [countryCode, setCountryCode] = useState('TW');
-    const [callingCode, setCallingCode] = useState('886');
-    const onSelect = (country) => {
-        setCountryCode(country.cca2);
-        setCallingCode(country?.callingCode);
-    };
+    const { LoginStore } = useStores();
+    const { currentStep } = LoginStore;
     return (
         <Page>
-            <View
-                style={{
-                    alignItems: 'center',
-                }}>
-                <Text
-                    style={{
-                        fontSize: 36,
-                        fontWeight: '900',
-                        letterSpacing: 3,
-                    }}>
-                    Pretty face
-                </Text>
-            </View>
-            <View
-                style={{
-                    flex: 1,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                }}>
-                <View
-                    style={{
-                        alignItems: 'center',
-                        flexDirection: 'row',
-                        marginHorizontal: 20,
-                        borderWidth: 2,
-                        borderColor: 'black',
-                        borderRadius: 10,
-                        padding: 20,
-                    }}>
-                    <CountryPicker
-                        withEmoji={true}
-                        fullWidth
-                        withCloseButton
-                        onSelect={onSelect}
-                        withFilter
-                        withAlphaFilter
-                        countryCode={countryCode}
-                    />
-                    <Text style={{ fontSize: 20 }}>+{callingCode}</Text>
-                    <Input style={{ flex: 1, marginHorizontal:10 }} />
-                </View>
-            </View>
+            <PhoneAuthentication />
         </Page>
     );
 };

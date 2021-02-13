@@ -22,9 +22,8 @@ const styles = {
     },
     buttonStyle: {
         borderWidth: 1,
-        borderRadius: 20,
+        borderRadius: 40,
         marginHorizontal: 10,
-        flex: 1,
     },
 };
 

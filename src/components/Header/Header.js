@@ -7,10 +7,9 @@ import { useStores } from '@store';
 import Text from '../Text';
 
 const Header = ({ headerText, Right, Left }) => {
-
     return (
         <View style={styles.container}>
-            {Left ? <Left/> : <View style={styles.emptyBox}/>}
+            {Left ? <Left /> : <View style={styles.emptyBox} />}
 
             {headerText && (
                 <View style={{ justifyContent: 'center' }}>
@@ -23,7 +22,7 @@ const Header = ({ headerText, Right, Left }) => {
                     </Text>
                 </View>
             )}
-            {Right ? <Right/> : <View style={styles.emptyBox}/>}
+            {Right ? <Right /> : <View style={styles.emptyBox} />}
         </View>
     );
 };

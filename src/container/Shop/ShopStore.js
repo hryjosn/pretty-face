@@ -4,16 +4,14 @@ import { callGetMyShopInfo } from '@api';
 
 const initState = {
     isFetching: false,
-    address: "",
+    address: '',
     menuItems: [],
-    name: "",
+    name: '',
     offerDay: [],
     tags: [],
-    userId: "",
-    _id: "",
-    params: {
-
-    },
+    userId: '',
+    _id: '',
+    params: {},
 };
 const api = {
     getShopInfo: callGetMyShopInfo,
@@ -30,13 +28,11 @@ class ShopStore extends storeAction {
     @action getShopInfo = async () => {
         try {
             const shopInfoRes = await this.api.getShopInfo();
-            this.assignData({...shopInfoRes.data})
-
+            this.assignData({ ...shopInfoRes.data });
         } catch (error) {
             console.error(error);
         }
     };
-
 }
 
 export default new ShopStore();

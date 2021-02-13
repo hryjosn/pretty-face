@@ -1,5 +1,5 @@
 import { action, extendObservable } from 'mobx';
-import storeAction from '@store/storeAction';
+import storeAction from '@/container/Shop/SignUp/store/node_modules/@store/storeAction';
 import { callChangePassword, callSendForgetPasswordEmail } from '@api';
 import { checkInput } from '@helpers';
 
