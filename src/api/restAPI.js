@@ -2,7 +2,7 @@ import axios from 'axios';
 import { API_URL } from '@env';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Actions } from 'react-native-router-flux';
-
+console.log('API_URL>>>', API_URL);
 const apiUrl = API_URL;
 export const post = async (url, data, debug = false, timeout = 6000) => {
     const token = await AsyncStorage.getItem('token');
@@ -29,7 +29,7 @@ export const post = async (url, data, debug = false, timeout = 6000) => {
                 console.log(response.data);
             }
             if (response.status !== 200) {
-                return response
+                return response;
             }
             return response.data;
         })
@@ -56,7 +56,7 @@ export const get = async (url, debug = false, timeout = 6000) => {
                 console.log(response.data);
             }
             if (response.status !== 200) {
-                return response
+                return response;
             }
             return response.data;
         })

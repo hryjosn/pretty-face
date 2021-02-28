@@ -2,17 +2,20 @@ import React, { useState } from 'react';
 import { StyleSheet, View, TextInput } from 'react-native';
 import { Text, Input, Page, Button } from '@components';
 import auth from '@react-native-firebase/auth';
+import { Actions } from 'react-native-router-flux';
 import PropTypes from 'prop-types';
 import { useStores } from '@store';
 import CountryPicker, {
     getAllCountries,
 } from 'react-native-country-picker-modal';
+import { observer } from 'mobx-react';
+
 const PhoneAuthentication = (props) => {
     const [countryCode, setCountryCode] = useState('TW');
     const [callingCode, setCallingCode] = useState('886');
     const [phoneNumber, setPhoneNumber] = useState('');
-    const { LoginStore } = useStores();
-    const { updateData } = LoginStore;
+    const { SignUpStore } = useStores();
+    const { paramsUpdate } = SignUpStore;
     const onSelect = (country) => {
         setCountryCode(country.cca2);
         setCallingCode(country?.callingCode);
@@ -78,7 +81,8 @@ const PhoneAuthentication = (props) => {
             <View style={{ flex: 1, paddingHorizontal: 70 }}>
                 <Button
                     onPress={() => {
-                        signInWithPhoneNumber();
+                        paramsUpdate('phone', `+${callingCode}${phoneNumber}`);
+                        Actions.replace('SignUp');
                     }}>
                     Send
                 </Button>
@@ -89,4 +93,4 @@ const PhoneAuthentication = (props) => {
 
 PhoneAuthentication.propTypes = {};
 
-export default PhoneAuthentication;
+export default observer(PhoneAuthentication);
