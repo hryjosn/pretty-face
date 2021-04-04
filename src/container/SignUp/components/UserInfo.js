@@ -4,8 +4,6 @@ import { observer } from 'mobx-react';
 import { useStores } from '@store';
 import { StyleSheet, View, KeyboardAvoidingView, Image } from 'react-native';
 import { Page, Input, Button, IconInput, Text } from '@components';
-import globalStyle from '@styles/globalStyle';
-import { Actions } from 'react-native-router-flux';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Feather from 'react-native-vector-icons/Feather';
 import { launchImageLibrary } from 'react-native-image-picker';

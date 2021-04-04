@@ -1,9 +1,11 @@
 import { action, extendObservable } from 'mobx';
 import storeAction from '@store/storeAction';
-import { callSignUpUser } from '@api';
-// import { LoginStore } from '@store';
+import { callLoginUser, callSignUpUser } from '@api';
 import { isEmail, isLength, isMobilePhone } from 'validator';
 import { Platform } from 'react-native';
+import { Actions } from 'react-native-router-flux';
+import * as AllStore from '@store/store';
+import { callGetUserInfo } from '@api';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const initState = {
@@ -31,43 +33,20 @@ class SignUpStore extends storeAction {
         extendObservable(this, initState);
     }
 
-    @action handleSignUp = async () => {
-        try {
-            console.log('handleSignUp');
-            const { image, publicId, userName, email, phone } = this.params;
-            const formData = new FormData();
-            formData.append('image', {
-                name: image.fileName,
-                type: 'file',
-                uri:
-                    Platform.OS === 'android'
-                        ? image.uri
-                        : image.uri.replace('file://', ''),
-            });
-            formData.append('publicId', publicId);
-            formData.append('userName', userName);
-            formData.append('email', email);
-            formData.append('phone', phone);
-            const res = await callSignUpUser(formData);
-            if (res.status === 200) {
-                Actions.replace('main');
-                AsyncStorage.setItem('token', res.data.token);
-            } else {
-                alert('Sign up fail');
-            }
-        } catch (error) {
-            const { code, msg } = error.response.data;
-            if (code === '10001') {
-                alert('This phone was registered');
-            } else if (code === '10002') {
-                alert('This email was registered');
-            } else if (code === '10003') {
-                alert('This ID was registered');
-            } else {
-                alert(msg);
-            }
-            this.currentStep = 'userInfo';
+    @action login = async (phone) => {
+        const res = await callLoginUser({ phone });
+        this.assignData({ ...res.data });
+        if (res.status === 200) {
+            AsyncStorage.setItem('userId', res.data.id);
+            AsyncStorage.setItem('token', res.data.token);
+            Actions.replace('Main');
+        } else {
+            Actions.replace('SignUp');
         }
+    };
+    @action getUserInfo = async () => {
+        const res = await callGetUserInfo();
+        this.assignData({ ...res.userInfo });
     };
     @action nextStep = () => {
         const { image, userName, publicId, phone, email } = this.params;
@@ -98,6 +77,18 @@ class SignUpStore extends storeAction {
             default:
                 break;
         }
+    };
+    @action handleSignOut = async () => {
+        Object.keys(AllStore).forEach((storeKey) => {
+            if (storeKey !== 'useStores') {
+                AllStore[storeKey].reset();
+            }
+        });
+        const asyncStorageKeys = await AsyncStorage.getAllKeys();
+        if (asyncStorageKeys.length > 0) {
+            AsyncStorage.clear();
+        }
+        Actions.push('Auth');
     };
 }
 

@@ -1,12 +1,6 @@
 import React from 'react';
-import {
-    View,
-    StyleSheet,
-    TouchableOpacity,
-    Text,
-    ImageBackground,
-} from 'react-native';
-import { CircleButton, RectangleButton, Header } from '@components';
+import { View, StyleSheet, TouchableOpacity, Text, Image } from 'react-native';
+import { Button, Header } from '@components';
 import { useStores } from '@store';
 import Page from '@components/Page/Page';
 import { observer } from 'mobx-react';
@@ -15,55 +9,47 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { restaurantSample } from '@image';
 
 const Profile = () => {
-    const { ShopStore, LoginStore } = useStores();
+    const { SignUpStore } = useStores();
+    const { handleSignOut, userName, avatarUrl, phone, publicId } = SignUpStore;
 
-    const { handleSignOut } = LoginStore;
-    const { getShopInfo } = ShopStore;
     return (
         <Page>
             <Header headerText={'個人檔案'} />
-            <ImageBackground source={restaurantSample} style={{ flex: 1 }}>
-                <View
-                    style={{ ...styles.rowStyle, marginHorizontal: 15 }}></View>
-                <View
-                    style={{
-                        ...styles.signboardStyle,
-                        alignSelf: 'center',
-                        borderRadius: 15,
-                        backgroundColor: 'white',
-                        position: 'relative',
-                        top: 120,
-                    }}></View>
-            </ImageBackground>
+            <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+                <Image
+                    source={{
+                        uri: avatarUrl,
+                    }}
+                    style={{ width: '100%', height: 400 }}
+                />
+            </View>
             <View style={styles.container}>
                 <View style={{ alignItems: 'center' }}>
-                    <CircleButton></CircleButton>
-                    <Text style={{ fontSize: 20, marginTop: 20 }}>姓名</Text>
-
-                    <View style={{ marginVertical: 20 }}>
-                        {/*<Text style={styles.descriptionStyle}>網站</Text>*/}
-                        <Text style={styles.descriptionStyle}>個人簡介</Text>
-                    </View>
-                    <TouchableOpacity
-                        onPress={() => {
-                            getShopInfo();
-                            Actions.push('Shop');
-                        }}>
-                        <Text style={{ fontSize: 20, marginVertical: 20 }}>
-                            我的餐廳
-                        </Text>
-                    </TouchableOpacity>
+                    <Text style={{ fontSize: 20, marginTop: 20 }}>
+                        {publicId}
+                    </Text>
+                    <Text style={{ fontSize: 20, marginTop: 20 }}>
+                        Name : {userName}
+                    </Text>
+                    <Text style={{ fontSize: 20, marginTop: 20 }}>
+                        Phone :{phone}
+                    </Text>
                 </View>
             </View>
-            <View style={{ alignItems: 'center' }}>
-                <RectangleButton
-                    buttonColor={'black'}
-                    textColor={'white'}
+            <View style={{ paddingHorizontal: 70 }}>
+                <Button
+                    onPress={() => {
+                        Actions.push('Invitation');
+                    }}>
+                    Invite your Friend
+                </Button>
+                <Button
+                    style={{ marginVertical: 20 }}
                     onPress={() => {
                         handleSignOut();
                     }}>
-                    登出
-                </RectangleButton>
+                    Sign Out
+                </Button>
             </View>
         </Page>
     );

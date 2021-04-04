@@ -9,24 +9,24 @@ import CountryPicker, {
     getAllCountries,
 } from 'react-native-country-picker-modal';
 import { observer } from 'mobx-react';
+import { callLoginUser } from '@api';
 
 const PhoneAuthentication = (props) => {
     const [countryCode, setCountryCode] = useState('TW');
     const [callingCode, setCallingCode] = useState('886');
     const [phoneNumber, setPhoneNumber] = useState('');
     const { SignUpStore } = useStores();
-    const { paramsUpdate } = SignUpStore;
+    const { assignData, login } = SignUpStore;
     const onSelect = (country) => {
         setCountryCode(country.cca2);
         setCallingCode(country?.callingCode);
     };
     // Handle the button press
-    const signInWithPhoneNumber = async () => {
+    const Login = async () => {
         // const confirmation = await auth().signInWithPhoneNumber(
         //     '+886 989-807-329',
         // );
         // setConfirm(confirmation);
-        updateData('currentStep', 'SignUp');
     };
     return (
         <View style={{ flex: 1 }}>
@@ -81,8 +81,7 @@ const PhoneAuthentication = (props) => {
             <View style={{ flex: 1, paddingHorizontal: 70 }}>
                 <Button
                     onPress={() => {
-                        paramsUpdate('phone', `+${callingCode}${phoneNumber}`);
-                        Actions.replace('SignUp');
+                        login(`+${callingCode}${phoneNumber}`);
                     }}>
                     Send
                 </Button>

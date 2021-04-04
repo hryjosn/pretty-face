@@ -1,20 +1,18 @@
 import React, { useEffect } from 'react';
-import styles from './Home.styles';
-import Page from '@components/Page/Page';
-import { useStores } from '@store';
-import { observer } from 'mobx-react';
-import { Button, TextButton, Text, RectangleButton } from '@components';
 import {
-    TextInput,
-    Image,
-    SafeAreaView,
     View,
-    FlatList,
     StyleSheet,
-    StatusBar,
+    TouchableOpacity,
+    Text,
+    Image,
+    FlatList,
 } from 'react-native';
+import { Button, Header } from '@components';
+import { useStores } from '@store';
+import Page from '@components/Page/Page';
+import { observer } from 'mobx-react';
 
-const Home = () => {
+const Verify = () => {
     const { HomeStore } = useStores();
     const { init, userList } = HomeStore;
     useEffect(() => {
@@ -38,6 +36,7 @@ const Home = () => {
     );
     return (
         <Page>
+            <Header headerText={'Verify'} />
             <View>
                 <FlatList
                     data={userList}
@@ -49,4 +48,36 @@ const Home = () => {
     );
 };
 
-export default observer(Home);
+export default observer(Verify);
+
+const styles = StyleSheet.create({
+    container: {
+        marginHorizontal: 30,
+        flex: 1,
+    },
+    headerStyle: {
+        color: '#555555',
+        fontSize: 26,
+        fontWeight: 'bold',
+        marginBottom: 20,
+    },
+    contentStyle: {
+        borderWidth: 2,
+        marginTop: 15,
+        marginBottom: 5,
+        padding: 20,
+        borderTopColor: 'gray',
+        borderBottomColor: 'gray',
+        borderRightColor: 'gray',
+        borderLeftColor: 'gray',
+    },
+    descriptionStyle: {
+        fontSize: 16,
+        paddingVertical: 5,
+        color: '#7F7F7F',
+    },
+    rowStyle: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+});

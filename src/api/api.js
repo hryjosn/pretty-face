@@ -26,11 +26,20 @@ export const callLoginUser = (postData) => request.post('user/login', postData);
  */
 export const callSignUpUser = (postData) => formPost('user', postData);
 
+/**
+ * 取得會員資料 [Get]
+ */
+export const callGetUserInfo = (postData) => get('user/info');
+/**
+ * 取得會員資料 [Get]
+ */
+export const callGetAllUserInfo = (postData) => get('user/users');
+
 /** -------------------------- 會員 end -------------------------- */
 /** -------------------------- 餐廳 -------------------------- */
 // /**
 //  * 會員登入 [POST]
 //  */
-export const callGetMyShopInfo = (postData) => get('shop', postData);
+export const callGetInvitationList = (postData) => get('invitation', postData);
 
 /** -------------------------- 餐廳 end -------------------------- */

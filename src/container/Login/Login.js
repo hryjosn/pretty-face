@@ -6,8 +6,6 @@ import { useStores } from '@store';
 import PhoneAuthentication from './components/PhoneAuthentication/PhoneAuthentication';
 
 const Login = () => {
-    const { LoginStore } = useStores();
-    const { currentStep } = LoginStore;
     return (
         <Page>
             <PhoneAuthentication />

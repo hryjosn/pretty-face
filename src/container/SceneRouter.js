@@ -7,6 +7,8 @@ import SignUp from '@container/SignUp';
 import Profile from '@container/Profile';
 import Home from '@container/Home';
 import Shop from '@container/Shop';
+import Verify from '@container/Verify';
+import Invitation from '@container/Invitation';
 import Icon from 'react-native-vector-icons/FontAwesome';
 const TabIcon = (props) => {
     let color = props.focused ? 'white' : '#7F7F7F';
@@ -45,7 +47,15 @@ const SceneRouter = () => {
                         tabBarStyle={{ backgroundColor: 'black' }}>
                         <Scene
                             key="tab0"
-                            title={'首頁'}
+                            title={'Verify'}
+                            icon={TabIcon}
+                            iconName={'check'}>
+                            <Scene key="Verify" component={Verify} hideNavBar />
+                            <Scene key="Shop" component={Shop} hideNavBar />
+                        </Scene>
+                        <Scene
+                            key="tab1"
+                            title={'Home'}
                             icon={TabIcon}
                             iconName={'home'}
                             initial>
@@ -57,8 +67,8 @@ const SceneRouter = () => {
                             />
                         </Scene>
                         <Scene
-                            key="tab1"
-                            title={'會員'}
+                            key="tab2"
+                            title={'Profile'}
                             icon={TabIcon}
                             iconName={'user'}>
                             <Scene
@@ -66,7 +76,11 @@ const SceneRouter = () => {
                                 component={Profile}
                                 hideNavBar
                             />
-                            <Scene key="Shop" component={Shop} hideNavBar />
+                            <Scene
+                                key="Invitation"
+                                component={Invitation}
+                                hideNavBar
+                            />
                         </Scene>
                     </Scene>
                 </Scene>

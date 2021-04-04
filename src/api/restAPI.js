@@ -38,11 +38,12 @@ export const post = async (url, data, debug = false, timeout = 6000) => {
             return e;
         });
 };
-export const get = async (url, debug = false, timeout = 6000) => {
+export const get = async (url, params, debug = false, timeout = 6000) => {
     const token = await AsyncStorage.getItem('token');
     return axios({
         method: 'GET',
         url: apiUrl + url,
+        params,
         timeout: timeout, // timeout
         headers: {
             'Content-Type': 'application/json; charset=UTF-8',

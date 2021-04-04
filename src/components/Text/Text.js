@@ -1,9 +1,12 @@
 import React from 'react';
 import { Text, StyleSheet, Platform } from 'react-native';
 
-const MyText = (props) => {
+const MyText = ({ fontSize, ...props }) => {
+    console.log(fontSize);
     return (
-        <Text style={{ ...props.style, ...styles.fontStyle }} {...props}>
+        <Text
+            style={{ fontSize: fontSize, ...props.style, ...styles.fontStyle }}
+            {...props}>
             {props.children}
         </Text>
     );

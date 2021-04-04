@@ -3,13 +3,12 @@ import { View, Text } from 'react-native';
 import { observer } from 'mobx-react';
 import { Actions } from 'react-native-router-flux';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-// import styles from '@container/Login/Login.styles';
+import { useStores } from '@store';
 
 const Init = () => {
     useEffect(() => {
         (async function () {
             const token = await AsyncStorage.getItem('token');
-            console.log('token', token);
             if (token) {
                 Actions.replace('Main');
             } else {

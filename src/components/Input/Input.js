@@ -4,12 +4,11 @@ import Text from '../Text';
 import { observer } from 'mobx-react';
 
 const Input = ({ label, containerStyle, ...props }) => {
-    const { style, ...rest } = props;
     return (
-        <View style={props.style}>
+        <View style={containerStyle}>
             {label && <Text>{label}</Text>}
             <View style={styles.inputStyle}>
-                <TextInput style={{ fontSize: 20 }} {...rest} />
+                <TextInput style={{ fontSize: 20 }} {...props} />
             </View>
         </View>
     );

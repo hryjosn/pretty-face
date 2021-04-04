@@ -19,8 +19,8 @@
 		96DA7DC7B2CDFDEB683D261F /* libPods-prettyFace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B26DD65D418EDB5FF205548 /* libPods-prettyFace.a */; };
 		98F920F560462BC3E407D720 /* libPods-prettyFace-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 414171BE348AB70940E993BC /* libPods-prettyFace-tvOSTests.a */; };
 		B6E0F8B6A5F0C0C1DDD4F4E4 /* libPods-prettyFace-prettyFaceTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56ABA07E59D936A3A60F85B0 /* libPods-prettyFace-prettyFaceTests.a */; };
-		E9B2563F25CE8F41008C0E3D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9B2563E25CE8F41008C0E3D /* GoogleService-Info.plist */; };
-		E9B2564025CE8F41008C0E3D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9B2563E25CE8F41008C0E3D /* GoogleService-Info.plist */; };
+		E9A2187A25FDB56300BF8EB3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9A2187925FDB56300BF8EB3 /* GoogleService-Info.plist */; };
+		E9A2187B25FDB56300BF8EB3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9A2187925FDB56300BF8EB3 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +80,7 @@
 		C65901F22C4F97B2A60917A3 /* Pods-prettyFace-prettyFaceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prettyFace-prettyFaceTests.debug.xcconfig"; path = "Target Support Files/Pods-prettyFace-prettyFaceTests/Pods-prettyFace-prettyFaceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D819E60EA2F71EBA6CF98EEE /* Pods-prettyFace-prettyFaceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prettyFace-prettyFaceTests.release.xcconfig"; path = "Target Support Files/Pods-prettyFace-prettyFaceTests/Pods-prettyFace-prettyFaceTests.release.xcconfig"; sourceTree = "<group>"; };
 		DD7D0EC8128E60B05E84F26C /* Pods-prettyFace-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-prettyFace-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-prettyFace-tvOSTests/Pods-prettyFace-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		E9B2563E25CE8F41008C0E3D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E9A2187925FDB56300BF8EB3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		FDBED2EE6EF04EA484AB7612 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 		13B07FAE1A68108700A75B9A /* prettyFace */ = {
 			isa = PBXGroup;
 			children = (
-				E9B2563E25CE8F41008C0E3D /* GoogleService-Info.plist */,
+				E9A2187925FDB56300BF8EB3 /* GoogleService-Info.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -383,7 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				E9B2563F25CE8F41008C0E3D /* GoogleService-Info.plist in Resources */,
+				E9A2187A25FDB56300BF8EB3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,7 +392,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */,
-				E9B2564025CE8F41008C0E3D /* GoogleService-Info.plist in Resources */,
+				E9A2187B25FDB56300BF8EB3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

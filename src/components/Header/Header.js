@@ -3,13 +3,25 @@ import { View, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import { observer } from 'mobx-react';
 import { useStores } from '@store';
+import { Actions } from 'react-native-router-flux';
 
 import Text from '../Text';
 
 const Header = ({ headerText, Right, Left }) => {
     return (
         <View style={styles.container}>
-            {Left ? <Left /> : <View style={styles.emptyBox} />}
+            {!Actions.state.index ? (
+                <TouchableOpacity
+                    onPress={() => {
+                        Actions.pop();
+                    }}>
+                    <View style={{ paddingLeft: 10 }}>
+                        <Icon name="left" size={30} color="black" />
+                    </View>
+                </TouchableOpacity>
+            ) : (
+                <View style={styles.emptyBox} />
+            )}
 
             {headerText && (
                 <View style={{ justifyContent: 'center' }}>
