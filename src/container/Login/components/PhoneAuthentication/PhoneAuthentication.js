@@ -70,7 +70,8 @@ const PhoneAuthentication = (props) => {
                     />
                     <Text style={{ fontSize: 20 }}>+{callingCode}</Text>
                     <Input
-                        style={{ flex: 1, marginHorizontal: 10 }}
+                        containerStyle={{ flex: 1, marginLeft: 10 }}
+                        maxLength={15}
                         value={phoneNumber}
                         onChangeText={(value) => {
                             setPhoneNumber(value);
@@ -89,7 +90,5 @@ const PhoneAuthentication = (props) => {
         </View>
     );
 };
-
-PhoneAuthentication.propTypes = {};
 
 export default observer(PhoneAuthentication);

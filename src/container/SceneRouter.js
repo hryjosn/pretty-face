@@ -6,7 +6,6 @@ import Login from '@container/Login';
 import SignUp from '@container/SignUp';
 import Profile from '@container/Profile';
 import Home from '@container/Home';
-import Shop from '@container/Shop';
 import Verify from '@container/Verify';
 import Invitation from '@container/Invitation';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -51,7 +50,6 @@ const SceneRouter = () => {
                             icon={TabIcon}
                             iconName={'check'}>
                             <Scene key="Verify" component={Verify} hideNavBar />
-                            <Scene key="Shop" component={Shop} hideNavBar />
                         </Scene>
                         <Scene
                             key="tab1"
