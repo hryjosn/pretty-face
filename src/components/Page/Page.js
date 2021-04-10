@@ -9,7 +9,7 @@ const Page = (props) => {
 
     useEffect(() => {
         getUserInfo();
-    });
+    }, []);
     return (
         <SafeAreaView style={styles.container}>
             {/*<StatusBar hidden />*/}

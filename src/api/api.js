@@ -35,6 +35,8 @@ export const callGetUserInfo = (postData) => get('user/info');
  */
 export const callGetAllUserInfo = (postData) => get('user/users');
 
+export const callVerifyAuth = (postData) => get('user/verifyAuth');
+
 /** -------------------------- 會員 end -------------------------- */
 /** -------------------------- 餐廳 -------------------------- */
 // /**

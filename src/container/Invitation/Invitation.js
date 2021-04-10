@@ -26,6 +26,7 @@ const Invitation = () => {
                     }}
                 />
                 <Button
+                    style={{ marginTop: 30 }}
                     onPress={() => {
                         handleSignOut();
                     }}>

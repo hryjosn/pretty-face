@@ -1,0 +1,26 @@
+{
+  "files.associations": {
+    "*.js": "javascriptreact"
+  },
+  "files.exclude": {
+    "node_modules/": true
+  },
+  "editor.tabSize": 2,
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.fontFamily": "'cascadia code', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "files.autoSave": "onFocusChange",
+  "editor.formatOnSave": true,
+  "javascript.validate.enable": false,
+  "files.eol": "\n",
+  "colorize.include": [
+    "**/*.js"
+  ],
+  "eslint.format.enable": true,
+  "prettier.printWidth": 90,
+  "prettier.semi": false,
+  "prettier.trailingComma": "none",
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+}

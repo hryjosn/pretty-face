@@ -26,7 +26,6 @@ const styles = StyleSheet.create({
         paddingLeft: 2,
     },
     containerInputStyle: {
-        marginHorizontal: 30,
         paddingBottom: 15,
         paddingTop: 40,
         flexDirection: 'row',

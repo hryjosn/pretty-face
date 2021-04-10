@@ -6,6 +6,7 @@ import Login from '@container/Login';
 import SignUp from '@container/SignUp';
 import Profile from '@container/Profile';
 import Home from '@container/Home';
+import VerifyAuth from '@container/VerifyAuth';
 import Verify from '@container/Verify';
 import Invitation from '@container/Invitation';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -31,6 +32,7 @@ const SceneRouter = () => {
                     <Scene key="Init" component={Init} hideNavBar initial />
                     <Scene key="Login" component={Login} hideNavBar />
                     <Scene key="SignUp" component={SignUp} hideNavBar />
+                    <Scene key="VerifyAuth" component={VerifyAuth} hideNavBar />
                 </Scene>
                 <Scene key="Main" hideNavBar>
                     <Scene

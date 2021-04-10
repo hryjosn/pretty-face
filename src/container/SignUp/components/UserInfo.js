@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 import { useStores } from '@store';
-import { StyleSheet, View, KeyboardAvoidingView, Image } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { Page, Input, Button, IconInput, Text } from '@components';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Feather from 'react-native-vector-icons/Feather';
@@ -14,7 +14,10 @@ const UserInfo = () => {
     const { email, userName, publicId, phone } = params;
 
     return (
-        <View>
+        <View style={styles.container}>
+            <Text fontSize={30} style={{ color: '#a8a8a8' }}>
+                Your phone: {phone}
+            </Text>
             <IconInput
                 placeholder={'Name'}
                 onChangeText={(text) => paramsUpdate('userName', text)}
@@ -56,3 +59,8 @@ const UserInfo = () => {
 
 //make this component available to the app
 export default observer(UserInfo);
+const styles = StyleSheet.create({
+    container: {
+        paddingHorizontal: 30,
+    },
+});
