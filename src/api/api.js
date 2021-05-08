@@ -33,15 +33,23 @@ export const callGetUserInfo = (postData) => get('user/info');
 /**
  * 取得會員資料 [Get]
  */
-export const callGetAllUserInfo = (postData) => get('user/users');
+export const callGetAllUserInfo = () => get('user/users');
 
-export const callVerifyAuth = (postData) => get('user/verifyAuth');
+export const callVerifyAuth = (postData) => post('user/verifyAuth', postData);
 
 /** -------------------------- 會員 end -------------------------- */
-/** -------------------------- 餐廳 -------------------------- */
+/** -------------------------- Follower -------------------------- */
 // /**
-//  * 會員登入 [POST]
+//  * CheckFollower [Get]
 //  */
-export const callGetInvitationList = (postData) => get('invitation', postData);
+export const callCheckFollower = () => get('follower/check');
 
-/** -------------------------- 餐廳 end -------------------------- */
+/** -------------------------- Follower end -------------------------- */
+
+/** -------------------------- Invitation -------------------------- */
+// /**
+//  * CheckFollower [Get]
+//  */
+export const callSendInvitation = (postData) => post('invitation', postData);
+
+/** -------------------------- Invitation end -------------------------- */

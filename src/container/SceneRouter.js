@@ -9,20 +9,25 @@ import Home from '@container/Home';
 import VerifyAuth from '@container/VerifyAuth';
 import Verify from '@container/Verify';
 import Invitation from '@container/Invitation';
-import Icon from 'react-native-vector-icons/FontAwesome';
-const TabIcon = (props) => {
-    let color = props.focused ? 'white' : '#7F7F7F';
-    return (
-        <View
-            style={{
-                flex: 1,
-                flexDirection: 'column',
-                alignItems: 'center',
-                alignSelf: 'center',
-            }}>
-            <Icon style={{ color }} name={props.iconName} size={30} />
-        </View>
-    );
+import Pending from '@container/Pending';
+import Icon from 'react-native-vector-icons/Ionicons';
+const TabIcon = ({ focused, title }) => {
+    let iconName;
+    switch (title) {
+        case 'tab0':
+            iconName = focused
+                ? 'ios-checkmark-circle'
+                : 'ios-checkmark-circle-outline';
+            break;
+        case 'tab1':
+            iconName = focused ? 'home' : 'home-outline';
+            break;
+        case 'tab2':
+            iconName = focused ? 'person' : 'person-outline';
+            break;
+    }
+
+    return <Icon style={{ color: '#7F7F7F' }} name={iconName} size={30} />;
 };
 const SceneRouter = () => {
     return (
@@ -33,31 +38,34 @@ const SceneRouter = () => {
                     <Scene key="Login" component={Login} hideNavBar />
                     <Scene key="SignUp" component={SignUp} hideNavBar />
                     <Scene key="VerifyAuth" component={VerifyAuth} hideNavBar />
+                    <Scene key="Pending" component={Pending} hideNavBar />
                 </Scene>
                 <Scene key="Main" hideNavBar>
                     <Scene
                         key="tabBar"
                         tabs
                         swipeEnabled={false}
-                        animationEnabled={false}
-                        showLabel
+                        showLabel={false}
                         tabBarPosition="bottom"
                         activeTintColor="white"
                         inactiveTintColor="#7F7F7F"
                         labelStyle={{ fontWeight: '800', fontSize: 16 }}
-                        tabBarStyle={{ backgroundColor: 'black' }}>
+                        tabBarStyle={{
+                            paddingTop: 5,
+                            backgroundColor: 'white',
+                        }}>
                         <Scene
                             key="tab0"
-                            title={'Verify'}
+                            title={'tab0'}
                             icon={TabIcon}
                             iconName={'check'}>
                             <Scene key="Verify" component={Verify} hideNavBar />
                         </Scene>
                         <Scene
                             key="tab1"
-                            title={'Home'}
                             icon={TabIcon}
                             iconName={'home'}
+                            title={'tab1'}
                             initial>
                             <Scene
                                 key="Home"
@@ -68,9 +76,9 @@ const SceneRouter = () => {
                         </Scene>
                         <Scene
                             key="tab2"
-                            title={'Profile'}
                             icon={TabIcon}
-                            iconName={'user'}>
+                            iconName={'user'}
+                            title={'tab2'}>
                             <Scene
                                 key="Profile"
                                 component={Profile}

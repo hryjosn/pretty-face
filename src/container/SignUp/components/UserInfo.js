@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 import { useStores } from '@store';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, ActivityIndicator } from 'react-native';
 import { Page, Input, Button, IconInput, Text } from '@components';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Feather from 'react-native-vector-icons/Feather';
@@ -10,7 +10,7 @@ import { launchImageLibrary } from 'react-native-image-picker';
 
 // create a component
 const UserInfo = () => {
-    const { paramsUpdate, params } = useStores().SignUpStore;
+    const { paramsUpdate, params, isFetching } = useStores().SignUpStore;
     const { email, userName, publicId, phone } = params;
 
     return (

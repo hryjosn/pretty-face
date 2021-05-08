@@ -18,25 +18,31 @@ const Verify = () => {
     useEffect(() => {
         init();
     }, []);
-    const { container } = styles;
+    const { head, container, follow } = styles;
+
     const renderItem = ({ item }) => (
         <View style={container}>
-            <View>
-                <Text style={{ fontSize: 30 }}>{item.publicId}</Text>
+            <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
+                <Text style={head}>{item.publicId}</Text>
+                <Text style={follow}>follow</Text>
             </View>
-            <Image
-                source={{
-                    // uri: item.avatarUrl,
-                    uri:
-                        'https://miro.medium.com/max/683/0*JQGt5cN0oZbo4uLV.jpg',
-                }}
-                style={{ width: '100%', height: 400 }}
-            />
+            <View style={{ borderColor: 'gray', borderTopWidth: 0.3 }}>
+                <Image
+                    source={{
+                        uri:
+                            item.avatarUrl ||
+                            'https://miro.medium.com/max/683/0*JQGt5cN0oZbo4uLV.jpg',
+                    }}
+                    style={{
+                        width: '100%',
+                        height: 400,
+                    }}
+                />
+            </View>
         </View>
     );
     return (
         <Page>
-            <Header headerText={'Verify'} />
             <View>
                 <FlatList
                     data={userList}
@@ -52,8 +58,18 @@ export default observer(Verify);
 
 const styles = StyleSheet.create({
     container: {
-        marginHorizontal: 30,
-        flex: 1,
+        marginVertical: 10,
+    },
+    head: {
+        fontSize: 16,
+        marginLeft: 20,
+        marginRight: 15,
+        marginBottom: 10,
+    },
+    follow: {
+        fontSize: 14,
+        marginBottom: 10,
+        color: '#77a6f1',
     },
     headerStyle: {
         color: '#555555',

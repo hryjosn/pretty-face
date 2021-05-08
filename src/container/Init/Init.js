@@ -6,11 +6,23 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useStores } from '@store';
 
 const Init = () => {
+    const { SignUpStore } = useStores();
+    const { checkFollower, verifyAuth } = SignUpStore;
     useEffect(() => {
         (async function () {
             const token = await AsyncStorage.getItem('token');
+            const verified = await AsyncStorage.getItem('verified');
+            const enoughFollower = await AsyncStorage.getItem('enoughFollower');
+            console.log('verified>', verified);
+            console.log('enoughFollower>', enoughFollower);
             if (token) {
-                Actions.replace('Main');
+                if (!verified) {
+                    verifyAuth();
+                } else if (!enoughFollower) {
+                    checkFollower();
+                } else {
+                    Actions.replace('Main');
+                }
             } else {
                 Actions.replace('Login');
             }

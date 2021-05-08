@@ -7,8 +7,8 @@ import { observer } from 'mobx-react';
 import { Actions } from 'react-native-router-flux';
 
 const Invitation = () => {
-    const { SignUpStore } = useStores();
-    const { handleSignOut } = SignUpStore;
+    const { InvitationStore } = useStores();
+    const { sendInvitation, updateData } = InvitationStore;
     useEffect(() => {
         console.log('Invitation');
     }, []);
@@ -20,15 +20,15 @@ const Invitation = () => {
                 <Input
                     label={"Your firiend's Email"}
                     placeholder={'Email'}
-                    // value={verifyCode}
                     onChangeText={(text) => {
-                        // paramsUpdate('verifyCode', text);
+                        console.log('text>', text);
+                        updateData('email', text);
                     }}
                 />
                 <Button
                     style={{ marginTop: 30 }}
                     onPress={() => {
-                        handleSignOut();
+                        sendInvitation();
                     }}>
                     Send
                 </Button>

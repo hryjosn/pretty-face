@@ -5,6 +5,7 @@ import {
     KeyboardAvoidingView,
     Image,
     Text,
+    ActivityIndicator,
 } from 'react-native';
 import { Page, Input, Button, IconInput } from '@components';
 import { observer } from 'mobx-react';
@@ -17,27 +18,12 @@ import { launchImageLibrary } from 'react-native-image-picker';
 import styles from './SignUp.styles';
 import ChooseAvatar from './components/ChooseAvatar';
 import UserInfo from './components/UserInfo';
+
 const { selectAvatarButtonContainer } = styles;
 const { container } = globalStyle;
 
 const SignUp = () => {
-    const {
-        nextStep,
-        paramsUpdate,
-        params,
-        currentStep,
-    } = useStores().SignUpStore;
-    const { email, password, userName, publicId, image } = params;
-    const handleChoosePhoto = () => {
-        const options = {
-            noData: true,
-        };
-        launchImageLibrary(options, (response) => {
-            if (response.uri) {
-                paramsUpdate('image', response);
-            }
-        });
-    };
+    const { nextStep, currentStep, isFetching } = useStores().SignUpStore;
     return (
         <Page>
             <View style={{ marginTop: 100 }}>
@@ -46,7 +32,13 @@ const SignUp = () => {
             </View>
 
             <View style={{ paddingHorizontal: 180, marginTop: 30 }}>
+                <ActivityIndicator
+                    animating={isFetching}
+                    size="large"
+                    color="gray"
+                />
                 <Button
+                    disabled={isFetching}
                     onPress={() => {
                         nextStep();
                     }}>
