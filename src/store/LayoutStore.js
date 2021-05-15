@@ -11,10 +11,6 @@ class LayoutStore extends storeAction {
         this.initState = initState;
         extendObservable(this, initState);
     }
-
-    @action onChangeShop = async (e) => {
-        this.updateData('ShopVisible', !this.ShopVisible);
-    };
 }
 
 export default new LayoutStore();

@@ -37,12 +37,25 @@ export const callGetAllUserInfo = () => get('user/users');
 
 export const callVerifyAuth = (postData) => post('user/verifyAuth', postData);
 
+export const callVerifyingUser = () => get('user/verifyingUsers');
+
 /** -------------------------- 會員 end -------------------------- */
 /** -------------------------- Follower -------------------------- */
 // /**
 //  * CheckFollower [Get]
 //  */
 export const callCheckFollower = () => get('follower/check');
+// /**
+//  * MyFollower [Get]
+//  */
+export const callGetMyFollower = () => get('follower/myFollower');
+// /**
+//  * FollowedUser [Get]
+//  */
+export const callGetIFollowedUser = () => get('follower');
+export const callFollowUser = (userId) => post('follower', { userId });
+export const callUnFollowUser = (userId) =>
+    post('follower/unFollow', { userId });
 
 /** -------------------------- Follower end -------------------------- */
 

@@ -40,9 +40,7 @@ export default class storeAction {
     };
     @action getList = async () => {
         const res = await this.api.list();
-        if (res?.status === 200) {
-            this.updateData('list', res?.data?.data?.rows ?? []);
-        }
+        this.updateData('list', res?.list);
     };
     @action nextPage = () => {
         this.paramsUpdate('offset', this.params.offset + this.params.limit);

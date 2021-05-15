@@ -13,8 +13,7 @@ const Init = () => {
             const token = await AsyncStorage.getItem('token');
             const verified = await AsyncStorage.getItem('verified');
             const enoughFollower = await AsyncStorage.getItem('enoughFollower');
-            console.log('verified>', verified);
-            console.log('enoughFollower>', enoughFollower);
+
             if (token) {
                 if (!verified) {
                     verifyAuth();

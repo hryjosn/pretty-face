@@ -50,14 +50,14 @@ class SignUpStore extends storeAction {
         if (res.status === 200) {
             AsyncStorage.setItem('userId', res.data.id);
             AsyncStorage.setItem('token', res.data.token);
-            if (!res?.data?.userInfo?.verifiedDate) {
-                Actions.replace('Pending');
-            } else {
+            if (res?.data?.userInfo?.verifiedDate) {
                 AsyncStorage.setItem(
                     'verified',
                     res?.data?.userInfo?.verifiedDate,
                 );
-                Actions.replace('Main');
+                Actions.replace('Init');
+            } else {
+                Actions.replace('Pending');
             }
         } else {
             this.paramsAssign({ phone });
@@ -165,8 +165,8 @@ class SignUpStore extends storeAction {
     @action checkFollower = async () => {
         const res = await callCheckFollower();
         this.assignData({ ...res.data });
-        console.log('res>>', res.status);
-        if (res.data.verified) {
+        console.log('res>>', res);
+        if (res.verified) {
             AsyncStorage.setItem('enoughFollower', 'true');
             Actions.replace('Init');
         } else {
