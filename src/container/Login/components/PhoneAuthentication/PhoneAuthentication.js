@@ -82,7 +82,9 @@ const PhoneAuthentication = (props) => {
             <View style={{ flex: 1, paddingHorizontal: 70 }}>
                 <Button
                     onPress={() => {
-                        login(`+${callingCode}${phoneNumber}`);
+                        login(
+                            `+${callingCode}${phoneNumber.replace(/^0+/, '')}`,
+                        );
                     }}>
                     Send
                 </Button>

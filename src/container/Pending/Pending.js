@@ -16,7 +16,7 @@ const Pending = () => {
         checkFollower();
     }, []);
     return (
-        <Page>
+        <SafeAreaView style={styles.page}>
             <View style={styles.container}>
                 <Text fontSize={20}>Be patient</Text>
                 <Text>
@@ -36,7 +36,7 @@ const Pending = () => {
                 }}>
                 Sign Out
             </Button>
-        </Page>
+        </SafeAreaView>
     );
 };
 

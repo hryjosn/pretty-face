@@ -35,7 +35,7 @@ export const callGetUserInfo = (postData) => get('user/info');
  */
 export const callGetAllUserInfo = () => get('user/users');
 
-export const callVerifyAuth = (postData) => post('user/verifyAuth', postData);
+export const callVerifyAuth = () => post('user/verifyAuth');
 
 export const callVerifyingUser = () => get('user/verifyingUsers');
 

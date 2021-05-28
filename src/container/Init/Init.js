@@ -7,21 +7,12 @@ import { useStores } from '@store';
 
 const Init = () => {
     const { SignUpStore } = useStores();
-    const { checkFollower, verifyAuth } = SignUpStore;
+    const { getUserInfo } = SignUpStore;
     useEffect(() => {
         (async function () {
             const token = await AsyncStorage.getItem('token');
-            const verified = await AsyncStorage.getItem('verified');
-            const enoughFollower = await AsyncStorage.getItem('enoughFollower');
-
             if (token) {
-                if (!verified) {
-                    verifyAuth();
-                } else if (!enoughFollower) {
-                    checkFollower();
-                } else {
-                    Actions.replace('Main');
-                }
+                getUserInfo();
             } else {
                 Actions.replace('Login');
             }

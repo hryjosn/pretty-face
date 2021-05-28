@@ -17,8 +17,6 @@ const initState = {
     isFetching: false,
     userName: '',
     userId: '',
-    valid: false,
-    sessionToken: null,
     login_flag: false,
     currentStep: 'ChooseAvatar',
     avatar: '',
@@ -27,6 +25,7 @@ const initState = {
     publicId: '',
     email: '',
     phone: '',
+    verified: false,
     params: {
         image: '',
         publicId: '',
@@ -44,20 +43,17 @@ class SignUpStore extends storeAction {
     }
 
     @action login = async (phone) => {
-        phone = phone.replace(/^0+/, '');
         const res = await callLoginUser({ phone });
         this.assignData({ ...res.data });
+        AsyncStorage.setItem('userId', res.data._id);
+        AsyncStorage.setItem('token', res.data.token);
         if (res.status === 200) {
-            AsyncStorage.setItem('userId', res.data.id);
-            AsyncStorage.setItem('token', res.data.token);
-            if (res?.data?.userInfo?.verifiedDate) {
-                AsyncStorage.setItem(
-                    'verified',
-                    res?.data?.userInfo?.verifiedDate,
-                );
-                Actions.replace('Init');
-            } else {
+            if (!this.verifiedDate) {
                 Actions.replace('Pending');
+            } else if (!this.invitedBy) {
+                Actions.replace('VerifyAuth');
+            } else {
+                Actions.replace('Main');
             }
         } else {
             this.paramsAssign({ phone });
@@ -65,8 +61,21 @@ class SignUpStore extends storeAction {
         }
     };
     @action getUserInfo = async () => {
-        const res = await callGetUserInfo();
-        this.assignData({ ...res.userInfo });
+        try {
+            const res = await callGetUserInfo();
+            this.assignData({ ...res });
+            if (res._id) {
+                if (!this.verifiedDate) {
+                    Actions.replace('Pending');
+                } else if (!this.invitedBy) {
+                    Actions.replace('VerifyAuth');
+                } else {
+                    Actions.replace('Main');
+                }
+            }
+        } catch (e) {
+            alert(e.response);
+        }
     };
     @action nextStep = () => {
         const { image, userName, publicId, phone, email } = this.params;
@@ -93,8 +102,6 @@ class SignUpStore extends storeAction {
                 if (image.uri) {
                     this.currentStep = 'UserInfo';
                 }
-                break;
-            default:
                 break;
         }
     };
@@ -158,17 +165,14 @@ class SignUpStore extends storeAction {
             await AsyncStorage.setItem('verified', res.userInfo.verifiedDate);
             Actions.replace('Init');
         } else {
-            console.log('fail');
             Actions.replace('VerifyAuth');
         }
     };
     @action checkFollower = async () => {
         const res = await callCheckFollower();
         this.assignData({ ...res.data });
-        console.log('res>>', res);
         if (res.verified) {
-            AsyncStorage.setItem('enoughFollower', 'true');
-            Actions.replace('Init');
+            Actions.replace('Main');
         } else {
             Actions.replace('Pending');
         }

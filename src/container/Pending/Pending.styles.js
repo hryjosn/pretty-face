@@ -7,4 +7,8 @@ export default StyleSheet.create({
         flex: 1,
         paddingHorizontal: 30,
     },
+    page: {
+        flex: 1,
+        backgroundColor: '#f6f6f6',
+    },
 });
