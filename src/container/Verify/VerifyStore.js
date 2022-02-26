@@ -1,5 +1,7 @@
 import { action, extendObservable } from 'mobx';
-import storeAction from '@store/storeAction';
+import storeAction from '@store/StoreAction';
+import { useLocalObservable } from 'mobx-react-lite';
+
 import {
     callVerifyingUser,
     callGetIFollowedUser,
@@ -16,26 +18,13 @@ const api = {
     list: callVerifyingUser,
 };
 
-class VerifyStore extends storeAction {
-    constructor() {
-        super();
-        this.initState = initState;
-        this.api = api;
-        extendObservable(this, initState);
-    }
-    @action getUserIFollowed = async () => {
-        const res = await callGetIFollowedUser();
-        this.usersIFollowed = res.followers;
-    };
+const VerifyStore = () => {
+    const store = useLocalObservable(() => ({
+        /*observables*/
+        ...initialState,
+        ...StoreAction(initialState),
+    }));
 
-    @action unFollowUser = async (userId) => {
-        const res = await callUnFollowUser(userId);
-        this.usersIFollowed = res.newFollowers;
-    };
-    @action followUser = async (userId) => {
-        const res = await callFollowUser(userId);
-        this.usersIFollowed = res.newFollowers;
-    };
-}
-
-export default new VerifyStore();
+    return store;
+};
+export default VerifyStore;

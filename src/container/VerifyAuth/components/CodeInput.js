@@ -12,7 +12,7 @@ import {
     useBlurOnFulfill,
     useClearByFocusCell,
 } from 'react-native-confirmation-code-field';
-import { observer } from 'mobx-react';
+import { observer } from 'mobx-react-lite';
 import styles from './CodeInput.style';
 import { useStores } from '@store';
 

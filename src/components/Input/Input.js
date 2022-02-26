@@ -1,7 +1,7 @@
 import React from 'react';
 import { TextInput, View, StyleSheet } from 'react-native';
 import Text from '../Text';
-import { observer } from 'mobx-react';
+import { observer } from 'mobx-react-lite';
 
 const Input = ({ label, containerStyle, labelFontSize, ...props }) => {
     return (
@@ -10,7 +10,7 @@ const Input = ({ label, containerStyle, labelFontSize, ...props }) => {
                 <Text style={{ fontSize: labelFontSize || 18 }}>{label}</Text>
             )}
             <View style={styles.inputStyle}>
-                <TextInput style={{ fontSize: 24 }} {...props} />
+                <TextInput style={{ fontSize: 16 }} {...props} />
             </View>
         </View>
     );
@@ -18,10 +18,12 @@ const Input = ({ label, containerStyle, labelFontSize, ...props }) => {
 export default observer(Input);
 const styles = StyleSheet.create({
     inputStyle: {
-        height: 30,
+        backgroundColor: '#e9e9e9c5',
+        borderRadius: 5,
+        height: 40,
         width: '100%',
-        borderBottomWidth: 1,
-        paddingBottom: 10,
+        borderWidth: 0.2,
+        padding: 10,
         marginTop: 10,
     },
 });

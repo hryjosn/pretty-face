@@ -1,48 +1,52 @@
-import { action, extendObservable, computed } from 'mobx';
-
 /** 共用的 store action */
-export default class storeAction {
-    constructor() {
-        this.initState = {};
-    }
+import { runInAction } from 'mobx';
+const StoreAction = initialState => {
+    const orginState = initialState;
+    return {
+        updateData(dataKey, value) {
+            runInAction(() => {
+                this[dataKey] = value;
+            });
+        },
+        /** action - 多項改變  */
 
-    /** action - 單項改變  */
-    @action updateData = (dataKey, value) => {
-        this[dataKey] = value;
-    };
+        assignData(obj) {
+            Object.assign(this, obj);
+        },
+        /** action - params 單項改變 */
 
-    /** action - 多項改變  */
-    @action assignData = (obj, validKey) => {
-        Object.assign(this, obj);
+        paramsUpdate(dataKey, value) {
+            const params = { ...this.params, [dataKey]: value };
+            runInAction(() => {
+                this.params = params;
+            });
+        },
+        paramsAssign(obj) {
+            const params = { ...this.params, ...obj };
+            runInAction(() => {
+                this.params = params;
+            });
+        },
+        reset() {
+            Object.assign(this, orginState);
+        },
+        async getList() {
+            const res = await this.api.list(this.params);
+            runInAction(() => {
+                this.list = res.data.list;
+            });
+        },
+        async openModal() {
+            runInAction(() => {
+                this.visible = true;
+            });
+        },
+        async closeModal() {
+            runInAction(() => {
+                this.reset();
+            });
+        },
     };
+};
 
-    /** action - params 單項改變 */
-    @action paramsUpdate = (dataKey, value) => {
-        const params = { ...this.params, [dataKey]: value };
-        this.assignData({ params });
-    };
-
-    /** action - params 多項改變 */
-    @action paramsAssign = (obj) => {
-        const params = { ...this.params, ...obj };
-        this.assignData({ params });
-    };
-
-    /** reset 狀態 */
-    @action reset = () => {
-        Object.assign(this, this.initState);
-    };
-    @action openModal = () => {
-        this.updateData('visible', true);
-    };
-    @action closeModal = () => {
-        this.updateData('visible', false);
-    };
-    @action getList = async () => {
-        const res = await this.api.list();
-        this.updateData('list', res?.list);
-    };
-    @action nextPage = () => {
-        this.paramsUpdate('offset', this.params.offset + this.params.limit);
-    };
-}
+export default StoreAction;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, Modal, ScrollView, Text, View } from 'react-native';
-import { observer } from 'mobx-react';
+import { observer } from 'mobx-react-lite';
 import { useStores } from '@store';
 import { Header, Input, Button } from '@components';
 import { Page } from '@components';
@@ -9,14 +9,8 @@ import { logo } from '@image';
 import NewPasswordView from './components/NewPasswordView';
 
 const ForgetPasswordModal = () => {
-    const {
-        visible,
-        reset,
-        submit,
-        paramsUpdate,
-        params,
-        hasSent,
-    } = useStores().ForgetPasswordModalStore;
+    const { visible, reset, submit, paramsUpdate, params, hasSent } =
+        useStores().ForgetPasswordModalStore;
 
     return (
         <Modal animationType="slide" transparent={false} visible={visible}>
@@ -44,7 +38,7 @@ const ForgetPasswordModal = () => {
                                     containerStyle={{ width: '100%' }}
                                     style={{ fontSize: 16 }}
                                     value={params.email}
-                                    onChangeText={(text) => {
+                                    onChangeText={text => {
                                         paramsUpdate('email', text);
                                     }}
                                 />

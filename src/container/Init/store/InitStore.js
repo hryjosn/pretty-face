@@ -1,45 +1,30 @@
 import { action, extendObservable } from 'mobx';
-import storeAction from '@store/storeAction';
-import { callGetUserInfo } from '@api';
-import { Actions } from 'react-native-router-flux';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useLocalObservable } from 'mobx-react-lite';
+
+import storeAction from '@store/StoreAction';
+import {
+    callVerifyingUser,
+    callGetIFollowedUser,
+    callFollowUser,
+    callUnFollowUser,
+} from '@api';
 
 const initState = {
-    isFetching: false,
-    defaultWarehouse: '',
-    _id: '',
-    customerNO: '',
-    isOldCustomerNeedUpdateData: 0,
-    email: '',
-    name: '',
-    gender: 1,
-    birthday: '',
-    phone: '',
-    warehouse: [],
-    wallet: {},
-    id_card: '',
-    bankVirtualAccount: '',
-    zendeskID: '',
-    created: '',
+    list: [],
+    usersIFollowed: {},
 };
 
-class InitStore extends storeAction {
-    constructor() {
-        super();
-        this.initState = initState;
-        extendObservable(this, initState);
-    }
+const api = {
+    list: callVerifyingUser,
+};
 
-    @action init = async () => {
-        const userInfoRes = await callGetUserInfo();
-        if (userInfoRes?.status === 200) {
-            this.assignData({ ...userInfoRes?.data?.data });
-            await AsyncStorage.setItem(
-                'zendeskID',
-                userInfoRes?.data?.data.zendeskID,
-            );
-        }
-    };
-}
+const InitStore = () => {
+    const store = useLocalObservable(() => ({
+        /*observables*/
+        ...initialState,
+        ...StoreAction(initialState),
+    }));
 
-export default new InitStore();
+    return store;
+};
+export default InitStore;

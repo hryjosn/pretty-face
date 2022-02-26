@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Button, Page, Text } from '@components';
 import { SafeAreaView, View } from 'react-native';
-import { observer } from 'mobx-react';
+import { observer } from 'mobx-react-lite';
 import styles from './VerifyAuth.styles';
 import { useStores } from '@store';
 const VerifyAuth = () => {

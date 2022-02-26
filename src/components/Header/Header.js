@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
-import { observer } from 'mobx-react';
+import { observer } from 'mobx-react-lite';
 import { useStores } from '@store';
 import { Actions } from 'react-native-router-flux';
 

@@ -1,16 +1,19 @@
 import { extendObservable } from 'mobx';
-import storeAction from '@store/storeAction';
+import StoreAction from '@store/StoreAction';
+import { useLocalObservable } from 'mobx-react-lite';
 
-const initState = {
+const initialState = {
     currentStep: 'PhoneAuthentication',
 };
 
-class LoginStore extends storeAction {
-    constructor() {
-        super();
-        this.initState = initState;
-        extendObservable(this, initState);
-    }
-}
+const LoginStore = () => {
+    const store = useLocalObservable(() => ({
+        /*observables*/
+        ...initialState,
+        ...StoreAction(initialState),
+        getUserInfo() {},
+    }));
 
-export default new LoginStore();
+    return store;
+};
+export default LoginStore;

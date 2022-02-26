@@ -1,4 +1,4 @@
-package com.johnsonsy.prettyface;
+package com.prettyface;
 
 import com.facebook.react.ReactActivity;
 

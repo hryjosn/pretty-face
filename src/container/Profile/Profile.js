@@ -3,7 +3,7 @@ import { View, StyleSheet, TouchableOpacity, Text, Image } from 'react-native';
 import { Button, Header } from '@components';
 import { useStores } from '@store';
 import Page from '@components/Page/Page';
-import { observer } from 'mobx-react';
+import { observer } from 'mobx-react-lite';
 import { Actions } from 'react-native-router-flux';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { restaurantSample } from '@image';

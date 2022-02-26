@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text } from 'react-native';
-import { observer } from 'mobx-react';
+import { observer } from 'mobx-react-lite';
 import { Actions } from 'react-native-router-flux';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useStores } from '@store';
 
 const Init = () => {
-    const { SignUpStore } = useStores();
-    const { getUserInfo } = SignUpStore;
+    const { LoginStore } = useStores();
+    const { getUserInfo } = LoginStore;
     useEffect(() => {
         (async function () {
             const token = await AsyncStorage.getItem('token');

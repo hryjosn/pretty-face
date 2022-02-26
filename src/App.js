@@ -1,6 +1,5 @@
 import React from 'react';
-import { Provider } from 'mobx-react';
-import * as stores from './store';
+import RootStoreContext from './store';
 import SceneRouter from './container/SceneRouter';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
@@ -16,9 +15,9 @@ const App = () => {
     }
     return (
         <ApolloProvider client={client}>
-            <Provider {...stores}>
+            <RootStoreContext>
                 <SceneRouter />
-            </Provider>
+            </RootStoreContext>
         </ApolloProvider>
     );
 };

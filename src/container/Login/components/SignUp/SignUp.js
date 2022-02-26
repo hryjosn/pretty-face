@@ -1,60 +1,45 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import { Page, Input, Button, IconInput } from '@components';
-import { observer } from 'mobx-react';
+import { StyleSheet, View, TextInput } from 'react-native';
+import { Text, Input, Page, Button } from '@components';
+import { observer } from 'mobx-react-lite';
 import { useStores } from '@store';
-import style from '@styles/globalStyle';
-import { Actions } from 'react-native-router-flux';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import PhoneAuthentication from './components/PhoneAuthentication/PhoneAuthentication';
 
-const { container } = style;
-
-const SignUp = () => {
-    const { handleSignUp, paramsUpdate, params } = useStores().SignUpStore;
-    const { email, password } = params;
+const Login = () => {
     return (
         <Page>
-            <View
-                style={{
-                    flex: 1,
-                    justifyContent: 'center',
-                }}>
-                <IconInput
-                    placeholder={'Name'}
-                    icon={() => (
-                        <MaterialIcons
-                            name={'person-outline'}
-                            size={30}
-                            color={'#a8a8a8'}
-                        />
-                    )}
-                />
-                <IconInput
-                    placeholder={'ID'}
-                    icon={() => (
-                        <MaterialIcons
-                            name={'mail-outline'}
-                            size={30}
-                            color={'#a8a8a8'}
-                        />
-                    )}
-                />
-                <IconInput
-                    placeholder={'email'}
-                    icon={() => (
-                        <MaterialIcons
-                            name={'mail-outline'}
-                            size={30}
-                            color={'#a8a8a8'}
-                        />
-                    )}
-                />
-            </View>
-            <View style={{ paddingHorizontal: 70 }}>
-                <Button onPress={() => {}}>Send</Button>
+            <View style={styles.container}>
+                <View style={styles.title}>
+                    <Text style={{ textAlign: 'center', fontSize: 30 }}>
+                        Create Username
+                    </Text>
+                </View>
+                <Text style={styles.description}>
+                    Pick a username for your new account. You can always change
+                    it later.
+                </Text>
+                <Input placeholder="Username" />
+                <Button style={styles.button}>Next</Button>
             </View>
         </Page>
     );
 };
-export default observer(SignUp);
-// const styles = StyleSheet.create({});
+
+const styles = StyleSheet.create({
+    container: {
+        paddingHorizontal: 40,
+        textAlign: 'center',
+    },
+    title: {
+        paddingVertical: 20,
+    },
+    description: {
+        textAlign: 'center',
+        marginBottom: 20,
+    },
+    button: {
+        marginTop: 30,
+    },
+});
+
+export default observer(Login);

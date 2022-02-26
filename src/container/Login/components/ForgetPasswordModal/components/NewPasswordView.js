@@ -2,15 +2,11 @@ import React from 'react';
 import { View } from 'react-native';
 import { Input, Button } from '@components';
 import { useStores } from '@store';
-import { observer } from 'mobx-react';
+import { observer } from 'mobx-react-lite';
 
 const NewPasswordView = () => {
-    const {
-        submit,
-        paramsUpdate,
-        params,
-        onValidate,
-    } = useStores().ForgetPasswordModalStore;
+    const { submit, paramsUpdate, params, onValidate } =
+        useStores().ForgetPasswordModalStore;
     const { verifyCode, password, checkPassword } = params;
 
     return (
@@ -22,7 +18,7 @@ const NewPasswordView = () => {
                         containerStyle={{ width: '100%' }}
                         style={{ fontSize: 16 }}
                         value={verifyCode}
-                        onChangeText={(text) => {
+                        onChangeText={text => {
                             paramsUpdate('verifyCode', text);
                         }}
                     />
@@ -42,7 +38,7 @@ const NewPasswordView = () => {
                     style={{ fontSize: 16 }}
                     value={password}
                     secureTextEntry={true}
-                    onChangeText={(text) => {
+                    onChangeText={text => {
                         paramsUpdate('password', text);
                     }}
                 />
@@ -53,7 +49,7 @@ const NewPasswordView = () => {
                     style={{ fontSize: 16 }}
                     value={checkPassword}
                     secureTextEntry={true}
-                    onChangeText={(text) => {
+                    onChangeText={text => {
                         paramsUpdate('checkPassword', text);
                     }}
                 />

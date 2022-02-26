@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import { View, StatusBar, StyleSheet, SafeAreaView } from 'react-native';
 import { isIphoneX } from '@helpers';
-import { observer } from 'mobx-react';
+import { observer } from 'mobx-react-lite';
 import { useStores } from '@store';
 
-const Page = (props) => {
-    const { getUserInfo } = useStores()['SignUpStore'];
+const Page = props => {
+    const {
+        LoginStore: { getUserInfo },
+    } = useStores();
 
     useEffect(() => {
         getUserInfo();

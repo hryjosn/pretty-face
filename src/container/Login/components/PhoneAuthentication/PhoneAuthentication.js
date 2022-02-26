@@ -8,16 +8,16 @@ import { useStores } from '@store';
 import CountryPicker, {
     getAllCountries,
 } from 'react-native-country-picker-modal';
-import { observer } from 'mobx-react';
+import { observer } from 'mobx-react-lite';
 import { callLoginUser } from '@api';
 
-const PhoneAuthentication = (props) => {
+const PhoneAuthentication = props => {
     const [countryCode, setCountryCode] = useState('TW');
     const [callingCode, setCallingCode] = useState('886');
     const [phoneNumber, setPhoneNumber] = useState('');
     const { SignUpStore } = useStores();
     const { assignData, login } = SignUpStore;
-    const onSelect = (country) => {
+    const onSelect = country => {
         setCountryCode(country.cca2);
         setCallingCode(country?.callingCode);
     };
@@ -73,7 +73,7 @@ const PhoneAuthentication = (props) => {
                         containerStyle={{ flex: 1, marginLeft: 10 }}
                         maxLength={15}
                         value={phoneNumber}
-                        onChangeText={(value) => {
+                        onChangeText={value => {
                             setPhoneNumber(value);
                         }}
                     />

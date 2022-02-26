@@ -10,7 +10,7 @@ import {
 import { Button, Header } from '@components';
 import { useStores } from '@store';
 import Page from '@components/Page/Page';
-import { observer } from 'mobx-react';
+import { observer } from 'mobx-react-lite';
 
 const Verify = () => {
     const { VerifyStore } = useStores();
@@ -69,7 +69,7 @@ const Verify = () => {
                 <FlatList
                     data={list}
                     renderItem={renderItem}
-                    keyExtractor={(item) => item._id}
+                    keyExtractor={item => item._id}
                 />
             </View>
         </Page>

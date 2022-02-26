@@ -1,17 +1,13 @@
 import React, { useEffect } from 'react';
 import { Button, Page, Text } from '@components';
 import { View } from 'react-native';
-import { observer } from 'mobx-react';
+import { observer } from 'mobx-react-lite';
 import styles from './Pending.styles';
 import { useStores } from '@store';
 const Pending = () => {
     const { SignUpStore } = useStores();
-    const {
-        handleSignOut,
-        checkFollower,
-        demandAmount,
-        followers,
-    } = SignUpStore;
+    const { handleSignOut, checkFollower, demandAmount, followers } =
+        SignUpStore;
     useEffect(() => {
         checkFollower();
     }, []);

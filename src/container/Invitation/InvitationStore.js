@@ -1,32 +1,30 @@
 import { action, extendObservable } from 'mobx';
-import storeAction from '@store/storeAction';
-import { callSendInvitation } from '@api';
-import { Actions } from 'react-native-router-flux';
-import { isEmail, isLength, isMobilePhone } from 'validator';
+import storeAction from '@store/StoreAction';
+import { useLocalObservable } from 'mobx-react-lite';
+
+import {
+    callVerifyingUser,
+    callGetIFollowedUser,
+    callFollowUser,
+    callUnFollowUser,
+} from '@api';
 
 const initState = {
-    email: '',
+    list: [],
+    usersIFollowed: {},
 };
 
-class InvitationStore extends storeAction {
-    constructor() {
-        super();
-        this.initState = initState;
-        extendObservable(this, initState);
-    }
-    @action sendInvitation = async () => {
-        this.fetching = true;
-        if (!isEmail(this.email)) {
-            alert('Invalid E-mail');
-            this.fetching = false;
-            return false;
-        }
-        const res = await callSendInvitation({ email: this.email });
-        if (res.status === 200) {
-            Actions.pop();
-        }
-        this.fetching = false;
-    };
-}
+const api = {
+    list: callVerifyingUser,
+};
 
-export default new InvitationStore();
+const InvitaionStore = () => {
+    const store = useLocalObservable(() => ({
+        /*observables*/
+        ...initialState,
+        ...StoreAction(initialState),
+    }));
+
+    return store;
+};
+export default InvitaionStore;

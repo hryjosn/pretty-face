@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import styles from './Home.styles';
 import Page from '@components/Page/Page';
 import { useStores } from '@store';
-import { observer } from 'mobx-react';
+import { observer } from 'mobx-react-lite';
 import { Button, TextButton, Text, RectangleButton } from '@components';
 import { Image, View, FlatList } from 'react-native';
 
@@ -34,7 +34,7 @@ const Home = () => {
                 <FlatList
                     data={userList}
                     renderItem={renderItem}
-                    keyExtractor={(item) => item._id}
+                    keyExtractor={item => item._id}
                 />
             </View>
         </Page>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { TextInput, View, StyleSheet } from 'react-native';
 import Text from '../Text';
-import { observer } from 'mobx-react';
+import { observer } from 'mobx-react-lite';
 
 const IconInput = ({ label, containerStyle, icon, ...props }) => {
     const { style, ...rest } = props;

@@ -15,14 +15,14 @@ export const Button = ({ children, style, ...props }) => {
 const styles = {
     textStyle: {
         alignSelf: 'center',
-        fontSize: 20,
+        fontSize: 16,
         fontWeight: '600',
         paddingTop: 10,
         paddingBottom: 10,
     },
     buttonStyle: {
         borderWidth: 1,
-        borderRadius: 40,
+        borderRadius: 10,
     },
 };
 
