@@ -3,7 +3,7 @@ import StoreAction from '@store/StoreAction';
 import { useLocalObservable } from 'mobx-react-lite';
 
 const initialState = {
-    currentStep: 'PhoneAuthentication',
+    userName: '',
 };
 
 const SignUpStore = () => {

@@ -6,13 +6,14 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 // Initialize Apollo Client
 const client = new ApolloClient({
     connectToDevTools: true,
-    uri: 'localhost:4000/graphql',
+    uri: 'http://localhost:4000/graphql',
     cache: new InMemoryCache(),
 });
 const App = () => {
     if (window.__REMOTEDEV__) {
         global.Blob = null;
     }
+    console.log('client>', client);
     return (
         <ApolloProvider client={client}>
             <RootStoreContext>
