@@ -24,7 +24,7 @@ const Login = () => {
                 <Link
                     style={styles.button}
                     onPress={() => {
-                        Actions.push('SignUp');
+                        Actions.push('CheckUsername1');
                     }}>
                     Sign Up.
                 </Link>

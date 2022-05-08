@@ -4,10 +4,10 @@ import { Text, Input, Page, Button } from '@components';
 import { observer } from 'mobx-react-lite';
 import { useStores } from '@store';
 import { gql, useLazyQuery } from '@apollo/client';
-import { CHECK_USER_NAME } from './gql';
+import { CHECK_USER_NAME } from '../gql';
 import { Actions } from 'react-native-router-flux';
 
-const CheckUsername = () => {
+const SignUp = () => {
     const [checkUsername, { loading, error, data }] =
         useLazyQuery(CHECK_USER_NAME);
     const {
@@ -62,4 +62,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default observer(CheckUsername);
+export default observer(SignUp);

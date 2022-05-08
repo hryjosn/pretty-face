@@ -10,7 +10,11 @@ const Input = ({ label, containerStyle, labelFontSize, ...props }) => {
                 <Text style={{ fontSize: labelFontSize || 18 }}>{label}</Text>
             )}
             <View style={styles.inputStyle}>
-                <TextInput style={{ fontSize: 16 }} {...props} />
+                <TextInput
+                    style={{ fontSize: 16 }}
+                    {...props}
+                    autoCapitalize="none"
+                />
             </View>
         </View>
     );

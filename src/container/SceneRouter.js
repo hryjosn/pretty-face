@@ -4,6 +4,7 @@ import { Scene, Router, Stack } from 'react-native-router-flux';
 import Init from '@container/Init';
 import Login from '@container/Login';
 import SignUp from '@container/SignUp';
+import CheckUsername from '@container/SignUp/pages/CheckUsername';
 import Profile from '@container/Profile';
 import Home from '@container/Home';
 import VerifyAuth from '@container/VerifyAuth';
@@ -37,6 +38,11 @@ const SceneRouter = () => {
                     <Scene key="Init" component={Init} hideNavBar initial />
                     <Scene key="Login" component={Login} hideNavBar />
                     <Scene key="SignUp" component={SignUp} hideNavBar />
+                    <Scene
+                        key="CheckUsername"
+                        component={CheckUsername}
+                        hideNavBar
+                    />
                     <Scene key="VerifyAuth" component={VerifyAuth} hideNavBar />
                     <Scene key="Pending" component={Pending} hideNavBar />
                 </Scene>

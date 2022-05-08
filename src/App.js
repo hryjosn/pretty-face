@@ -2,7 +2,7 @@ import React from 'react';
 import RootStoreContext from './store';
 import SceneRouter from './container/SceneRouter';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
-
+console.disableYellowBox = true;
 // Initialize Apollo Client
 const client = new ApolloClient({
     connectToDevTools: true,
