@@ -34,6 +34,7 @@ module.exports = {
                     '@helpers': './src/helpers',
                     '@image': './src/image',
                     '@validators': './src/helpers/validators',
+                    '@utils': './src/utils',
                 },
             },
         ],

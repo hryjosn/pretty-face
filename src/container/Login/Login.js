@@ -3,7 +3,7 @@ import { StyleSheet, View, TextInput } from 'react-native';
 import { Text, Input, Page, Button, Link } from '@components';
 import { observer } from 'mobx-react-lite';
 import { useStores } from '@store';
-import PhoneAuthentication from './components/PhoneAuthentication/PhoneAuthentication';
+import PhoneAuthentication from '../SignUp/pages/PhoneAuthentication';
 import { Actions } from 'react-native-router-flux';
 
 const Login = () => {
@@ -24,7 +24,7 @@ const Login = () => {
                 <Link
                     style={styles.button}
                     onPress={() => {
-                        Actions.push('CheckUsername1');
+                        Actions.push('CheckUsername');
                     }}>
                     Sign Up.
                 </Link>

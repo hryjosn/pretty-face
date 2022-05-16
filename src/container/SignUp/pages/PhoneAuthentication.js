@@ -11,7 +11,10 @@ import CountryPicker, {
 import { observer } from 'mobx-react-lite';
 import { callLoginUser } from '@api';
 
-const PhoneAuthentication = props => {
+import { gql, useLazyQuery } from '@apollo/client';
+import { CHECK_USER_NAME } from '../gql';
+
+const PhoneAuthentication = () => {
     const [countryCode, setCountryCode] = useState('TW');
     const [callingCode, setCallingCode] = useState('886');
     const [phoneNumber, setPhoneNumber] = useState('');
@@ -26,38 +29,33 @@ const PhoneAuthentication = props => {
         // const confirmation = await auth().signInWithPhoneNumber(
         //     '+886 989-807-329',
         // );
-        // setConfirm(confirmation);
+        // setConfirm(confirmati
     };
+    const [checkUsername, { loading, error, data }] =
+        useLazyQuery(CHECK_USER_NAME);
+
+    const {
+        SignUpStore: { updateData, userName },
+    } = useStores();
+
     return (
-        <View style={{ flex: 1 }}>
-            <View
-                style={{
-                    alignItems: 'center',
-                }}>
-                <Text
-                    style={{
-                        fontSize: 36,
-                        fontWeight: '900',
-                        letterSpacing: 3,
-                    }}>
-                    Pretty face
+        <Page>
+            <View style={styles.container}>
+                <View style={styles.title}>
+                    <Text style={{ textAlign: 'center', fontSize: 30 }}>
+                        Verify Phone
+                    </Text>
+                </View>
+                <Text style={styles.description}>
+                    You will receive a SMS message to verify your phone number.
                 </Text>
-            </View>
-            <View
-                style={{
-                    flex: 1,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                }}>
                 <View
                     style={{
                         alignItems: 'center',
                         flexDirection: 'row',
-                        marginHorizontal: 20,
-                        borderWidth: 2,
-                        borderColor: 'black',
-                        borderRadius: 10,
-                        padding: 20,
+                        // borderBottomWidth: 2,
+                        // borderColor: 'black',
+                        // padding: 20,
                     }}>
                     <CountryPicker
                         withEmoji={true}
@@ -78,19 +76,37 @@ const PhoneAuthentication = props => {
                         }}
                     />
                 </View>
-            </View>
-            <View style={{ flex: 1, paddingHorizontal: 70 }}>
+
                 <Button
+                    style={styles.button}
                     onPress={() => {
-                        login(
-                            `+${callingCode}${phoneNumber.replace(/^0+/, '')}`,
-                        );
+                        // login(
+                        //     `+${callingCode}${phoneNumber.replace(/^0+/, '')}`,
+                        // );
+                        Actions.push('CodeInput');
                     }}>
-                    Send
+                    Next
                 </Button>
             </View>
-        </View>
+        </Page>
     );
 };
+
+const styles = StyleSheet.create({
+    container: {
+        paddingHorizontal: 40,
+        textAlign: 'center',
+    },
+    title: {
+        paddingVertical: 20,
+    },
+    description: {
+        textAlign: 'center',
+        marginBottom: 20,
+    },
+    button: {
+        marginTop: 30,
+    },
+});
 
 export default observer(PhoneAuthentication);

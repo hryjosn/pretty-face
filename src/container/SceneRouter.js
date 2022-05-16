@@ -12,6 +12,8 @@ import Verify from '@container/Verify';
 import Invitation from '@container/Invitation';
 import Pending from '@container/Pending';
 import Icon from 'react-native-vector-icons/Ionicons';
+import PhoneAuthentication from '@container/SignUp/pages/PhoneAuthentication';
+import CodeInput from '@container/SignUp/pages/CodeInput';
 const TabIcon = ({ focused, title }) => {
     let iconName;
     switch (title) {
@@ -44,6 +46,12 @@ const SceneRouter = () => {
                         hideNavBar
                     />
                     <Scene key="VerifyAuth" component={VerifyAuth} hideNavBar />
+                    <Scene
+                        key="PhoneAuthentication"
+                        component={PhoneAuthentication}
+                        hideNavBar
+                    />
+                    <Scene key="CodeInput" component={CodeInput} hideNavBar />
                     <Scene key="Pending" component={Pending} hideNavBar />
                 </Scene>
                 <Scene key="Main" hideNavBar>

@@ -4,12 +4,13 @@ import { Text, Input, Page, Button } from '@components';
 import { observer } from 'mobx-react-lite';
 import { useStores } from '@store';
 import { gql, useLazyQuery } from '@apollo/client';
+import { useImperativeQuery } from '@utils/query';
 import { CHECK_USER_NAME } from '../gql';
 import { Actions } from 'react-native-router-flux';
 
-const SignUp = () => {
-    const [checkUsername, { loading, error, data }] =
-        useLazyQuery(CHECK_USER_NAME);
+const CheckUsername = () => {
+    const checkUsername = useImperativeQuery(CHECK_USER_NAME);
+
     const {
         SignUpStore: { updateData, userName },
     } = useStores();
@@ -35,8 +36,26 @@ const SignUp = () => {
                 <Button
                     style={styles.button}
                     onPress={async () => {
-                        await checkUsername({ variables: { userName } });
-                        Actions.replace();
+                        try {
+                            const { data, error } = await checkUsername({
+                                userName,
+                            });
+
+                            console.log('data>', data);
+                            if (data?.CheckUsername) {
+                                Actions.push('PhoneAuthentication');
+                            } else {
+                                alert(
+                                    'This username was used, please pick other one',
+                                );
+                            }
+                        } catch (e) {
+                            alert(
+                                'This username was used, please pick other one',
+                            );
+                        }
+
+                        // Actions.replace();
                     }}>
                     Next
                 </Button>
@@ -62,4 +81,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default observer(SignUp);
+export default observer(CheckUsername);
