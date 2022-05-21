@@ -12,16 +12,12 @@ export const LOGIN = gql`
     }
 `;
 export const SIGNUP = /* GraphQL */ gql`
-    mutation EmailSignUp(
-        $user: UserCreateInput!
-        $installation: InstallationInput!
-    ) {
-        emailSignUp(userCreateInput: $user, installationInput: $installation) {
+    mutation EmailSignUp($user: UserCreateInput!, $portrait: Upload!) {
+        signUp(userCreateInput: $user, portrait: $portrait) {
             token
             user {
                 id
-                username
-                email
+                userName
             }
         }
     }

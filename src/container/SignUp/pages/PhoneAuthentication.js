@@ -18,8 +18,10 @@ const PhoneAuthentication = () => {
     const [countryCode, setCountryCode] = useState('TW');
     const [callingCode, setCallingCode] = useState('886');
     const [phoneNumber, setPhoneNumber] = useState('');
-    const { SignUpStore } = useStores();
-    const { assignData, login } = SignUpStore;
+    const {
+        SignUpStore: { assignData, login, paramsUpdate },
+    } = useStores();
+
     const onSelect = country => {
         setCountryCode(country.cca2);
         setCallingCode(country?.callingCode);
@@ -80,9 +82,14 @@ const PhoneAuthentication = () => {
                 <Button
                     style={styles.button}
                     onPress={() => {
-                        // login(
-                        //     `+${callingCode}${phoneNumber.replace(/^0+/, '')}`,
-                        // );
+                        if (phoneNumber.length < 9) {
+                            alert('invalid phone number');
+                            return;
+                        }
+                        paramsUpdate(
+                            'phone',
+                            `+${callingCode}${phoneNumber.replace(/^0+/, '')}`,
+                        );
                         Actions.push('CodeInput');
                     }}>
                     Next

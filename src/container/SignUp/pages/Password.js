@@ -8,14 +8,11 @@ import { useImperativeQuery } from '@utils/query';
 import { CHECK_USER_NAME } from '../gql';
 import { Actions } from 'react-native-router-flux';
 
-const CheckUsername = () => {
-    const checkUsername = useImperativeQuery(CHECK_USER_NAME);
-
+const Password = () => {
     const {
         SignUpStore: {
-            updateData,
             paramsUpdate,
-            params: { userName },
+            params: { password },
         },
     } = useStores();
 
@@ -24,7 +21,7 @@ const CheckUsername = () => {
             <View style={styles.container}>
                 <View style={styles.title}>
                     <Text style={{ textAlign: 'center', fontSize: 30 }}>
-                        Create Username
+                        Create Password
                     </Text>
                 </View>
                 <Text style={styles.description}>
@@ -33,28 +30,16 @@ const CheckUsername = () => {
                 </Text>
                 <Input
                     autoCapitalize={'none'}
-                    placeholder="Username"
-                    value={userName}
-                    onChangeText={text => paramsUpdate('userName', text)}
+                    placeholder="Password"
+                    value={password}
+                    maxLength={12}
+                    secureTextEntry
+                    onChangeText={text => paramsUpdate('password', text)}
                 />
                 <Button
                     style={styles.button}
                     onPress={async () => {
-                        try {
-                            const { data, error } = await checkUsername({
-                                userName,
-                            });
-
-                            if (data?.CheckUsername) {
-                                Actions.push('PhoneAuthentication');
-                            } else {
-                                alert(
-                                    'This username was used, please pick other one',
-                                );
-                            }
-                        } catch (e) {
-                            alert(e);
-                        }
+                        Actions.push('PhoneAuthentication');
                     }}>
                     Next
                 </Button>
@@ -80,4 +65,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default observer(CheckUsername);
+export default observer(Password);

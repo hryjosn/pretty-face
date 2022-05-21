@@ -15,6 +15,7 @@ import {
 import { observer } from 'mobx-react-lite';
 import styles from './CodeInput.style';
 import { useStores } from '@store';
+import { Actions } from 'react-native-router-flux';
 
 const { Text: AnimatedText } = Animated;
 const CELL_COUNT = 6;
@@ -60,7 +61,7 @@ const CodeInput = () => {
             <TouchableOpacity
                 style={styles.nextButton}
                 onPress={() => {
-                    verifyAuth(value);
+                    Actions.push('ChooseAvatar');
                 }}>
                 <Text style={styles.nextButtonText}>Verify</Text>
             </TouchableOpacity>

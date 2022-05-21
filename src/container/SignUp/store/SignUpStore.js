@@ -4,6 +4,12 @@ import { useLocalObservable } from 'mobx-react-lite';
 
 const initialState = {
     userName: '',
+    params: {
+        password: 'tttttttt',
+        userName: 'hryjosn',
+        phone: '989807329',
+        image: {},
+    },
 };
 
 const SignUpStore = () => {
