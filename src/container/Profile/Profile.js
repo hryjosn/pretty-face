@@ -7,14 +7,26 @@ import { observer } from 'mobx-react-lite';
 import { Actions } from 'react-native-router-flux';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { restaurantSample } from '@image';
-
+import { useQuery } from '@apollo/client';
+import { GET_MY_INFO } from './gql';
 const Profile = () => {
+    const {
+        loading,
+        error,
+        data: {
+            me: {
+                userName,
+                phone,
+                portrait: { url },
+            },
+        },
+    } = useQuery(GET_MY_INFO);
     const { SignUpStore } = useStores();
-    const { handleSignOut, userName, avatarUrl, phone, publicId } = SignUpStore;
+    const { handleSignOut, avatarUrl, publicId } = SignUpStore;
 
     return (
         <Page>
-            <Header headerText={'個人檔案'} />
+            <Header headerText={'Profile'} />
             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                 <Image
                     source={{
@@ -25,9 +37,6 @@ const Profile = () => {
             </View>
             <View style={styles.container}>
                 <View style={{ alignItems: 'center' }}>
-                    <Text style={{ fontSize: 20, marginTop: 20 }}>
-                        {publicId}
-                    </Text>
                     <Text style={{ fontSize: 20, marginTop: 20 }}>
                         Name : {userName}
                     </Text>

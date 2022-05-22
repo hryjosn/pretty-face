@@ -5,13 +5,13 @@ import { observer } from 'mobx-react-lite';
 import { useStores } from '@store';
 
 const Page = props => {
-    const {
-        LoginStore: { getUserInfo },
-    } = useStores();
+    // const {
+    //     LoginStore: { getUserInfo },
+    // } = useStores();
 
-    useEffect(() => {
-        getUserInfo();
-    }, []);
+    // useEffect(() => {
+    //     getUserInfo();
+    // }, []);
     return (
         <SafeAreaView style={styles.container}>
             {/*<StatusBar hidden />*/}

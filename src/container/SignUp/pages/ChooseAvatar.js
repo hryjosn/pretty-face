@@ -1,6 +1,6 @@
 //import liraries
 import React, { Component } from 'react';
-import { StyleSheet, View, Image } from 'react-native';
+import { StyleSheet, View, Image, ActivityIndicator } from 'react-native';
 import { observer } from 'mobx-react-lite';
 import { useStores } from '@store';
 import { Page, Input, Button, IconInput } from '@components';
@@ -8,6 +8,7 @@ import { launchImageLibrary } from 'react-native-image-picker';
 import { gql, useMutation } from '@apollo/client';
 import { SIGNUP } from '@container/SignUp/gql/mutation';
 import { ReactNativeFile } from 'apollo-upload-client';
+import { Actions } from 'react-native-router-flux';
 
 // create a component
 const ChooseAvatar = () => {
@@ -16,9 +17,8 @@ const ChooseAvatar = () => {
     } = useStores();
     const { password, userName, publicId, image } = params;
     const { container, button } = styles;
-    const [signUp, { data, loading, error }] = useMutation(SIGNUP);
-    console.log('error>', error);
-    console.log('data>', data);
+    const [signUp, { loading, error }] = useMutation(SIGNUP);
+
     const handleChoosePhoto = async () => {
         const options = {
             title: 'Select Image',
@@ -50,7 +50,7 @@ const ChooseAvatar = () => {
                 </Button>
                 <Button
                     style={button}
-                    onPress={() => {
+                    onPress={async () => {
                         const { image, ...user } = params;
                         const portrait = new ReactNativeFile({
                             uri: image.uri,
@@ -58,16 +58,24 @@ const ChooseAvatar = () => {
                             type: image.type,
                             ext: image.ext,
                         });
-                        console.log('portrait>', portrait);
-                        signUp({
-                            variables: {
-                                user: user,
-                                portrait,
-                            },
-                        });
+                        try {
+                            const data = await signUp({
+                                variables: {
+                                    user,
+                                    portrait,
+                                },
+                            });
+                            if (data.data.signUp.user.id) {
+                                alert('Sign Up successfully!');
+                                Actions.push('Login');
+                            }
+                        } catch (e) {
+                            alert(e);
+                        }
                     }}>
                     Next
                 </Button>
+                {loading && <ActivityIndicator style={button} size="large" />}
             </View>
         </Page>
     );

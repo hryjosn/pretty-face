@@ -1,29 +1,16 @@
 import { action, extendObservable } from 'mobx';
 import { useLocalObservable } from 'mobx-react-lite';
 import storeAction from '@store/StoreAction';
-import {
-    callVerifyingUser,
-    callGetIFollowedUser,
-    callFollowUser,
-    callUnFollowUser,
-} from '@api';
 
-const initState = {
+const initialState = {
     list: [],
     usersIFollowed: {},
 };
 
-const api = {
-    list: callVerifyingUser,
-};
-
-const HomeStore = () => {
-    const store = useLocalObservable(() => ({
+const HomeStore = () =>
+    useLocalObservable(() => ({
         /*observables*/
-        ...initialState,
-        ...StoreAction(initialState),
+        // ...initialState,
+        // ...StoreAction(initialState),
     }));
-
-    return store;
-};
 export default HomeStore;

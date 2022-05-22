@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     View,
     StyleSheet,
@@ -6,68 +6,67 @@ import {
     Text,
     Image,
     FlatList,
+    ActivityIndicator,
 } from 'react-native';
 import { Button, Header } from '@components';
 import { useStores } from '@store';
 import Page from '@components/Page/Page';
 import { observer } from 'mobx-react-lite';
-
+import { useQuery } from '@apollo/client';
+import { GET_VERIFY_USERS } from './gql';
+import tw from 'twrnc';
 const Verify = () => {
-    const { VerifyStore } = useStores();
-    const {
-        getList,
-        list,
-        getUserIFollowed,
-        usersIFollowed,
-        unFollowUser,
-        followUser,
-    } = VerifyStore;
-    useEffect(() => {
-        getList();
-        getUserIFollowed();
-    }, []);
     const { head, container, followText } = styles;
+    const [verifyList, setVerifyList] = useState([]);
 
-    const renderItem = ({ item }) => (
-        <View style={container}>
-            <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
-                <Text style={head}>{item.publicId}</Text>
-                <Text
-                    style={followText}
-                    onPress={() => {
-                        console.log(
-                            "usersIFollowed[item['_id']]>",
-                            usersIFollowed[item['_id']],
-                        );
-                        if (usersIFollowed[item['_id']]) {
-                            unFollowUser(item['_id']);
-                        } else {
-                            followUser(item['_id']);
-                        }
-                    }}>
-                    {usersIFollowed[item['_id']] ? 'followed' : 'follow'}
-                </Text>
+    const { loading, error, data } = useQuery(GET_VERIFY_USERS, {
+        onCompleted: data => {
+            verifyList(...data.getVerifyUsers);
+        },
+    });
+
+    console.log('data>', data);
+    const renderItem = ({
+        item: {
+            portrait: { url },
+            userName,
+        },
+    }) => {
+        return (
+            <View style={container}>
+                <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
+                    <Text style={head}>{userName}</Text>
+                    <Text
+                        style={followText}
+                        onPress={() => {
+                            setVerifyList(...verifyList);
+                        }}>
+                        follow
+                    </Text>
+                </View>
+                <View style={{ borderColor: 'gray', borderTopWidth: 0.3 }}>
+                    <Image
+                        source={{
+                            uri:
+                                url ||
+                                'https://miro.medium.com/max/683/0*JQGt5cN0oZbo4uLV.jpg',
+                        }}
+                        style={{
+                            width: '100%',
+                            height: 400,
+                        }}
+                    />
+                </View>
             </View>
-            <View style={{ borderColor: 'gray', borderTopWidth: 0.3 }}>
-                <Image
-                    source={{
-                        uri:
-                            item.avatarUrl ||
-                            'https://miro.medium.com/max/683/0*JQGt5cN0oZbo4uLV.jpg',
-                    }}
-                    style={{
-                        width: '100%',
-                        height: 400,
-                    }}
-                />
-            </View>
-        </View>
-    );
+        );
+    };
+    if (loading) return <ActivityIndicator style={tw`pt-5`} size="large" />;
+
     return (
         <Page>
             <View>
                 <FlatList
-                    data={list}
+                    data={verifyList}
                     renderItem={renderItem}
                     keyExtractor={item => item._id}
                 />

@@ -7,12 +7,12 @@ import { useStores } from '@store';
 
 const Init = () => {
     const { LoginStore } = useStores();
-    const { getUserInfo } = LoginStore;
+    const { recordUserInfo } = LoginStore;
     useEffect(() => {
         (async function () {
             const token = await AsyncStorage.getItem('token');
             if (token) {
-                getUserInfo();
+                Actions.replace('Home');
             } else {
                 Actions.replace('Login');
             }

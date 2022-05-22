@@ -6,11 +6,8 @@ import styles from './Pending.styles';
 import { useStores } from '@store';
 const Pending = () => {
     const { SignUpStore } = useStores();
-    const { handleSignOut, checkFollower, demandAmount, followers } =
-        SignUpStore;
-    useEffect(() => {
-        checkFollower();
-    }, []);
+
+    useEffect(() => {}, []);
     return (
         <SafeAreaView style={styles.page}>
             <View style={styles.container}>

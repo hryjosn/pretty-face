@@ -1,9 +1,13 @@
 import { extendObservable } from 'mobx';
 import StoreAction from '@store/StoreAction';
 import { useLocalObservable } from 'mobx-react-lite';
+import { useMutation } from '@apollo/client';
 
 const initialState = {
-    currentStep: 'PhoneAuthentication',
+    params: {
+        password: 'tttttttt',
+        userName: 'hryjosn',
+    },
 };
 
 const LoginStore = () => {
@@ -11,7 +15,7 @@ const LoginStore = () => {
         /*observables*/
         ...initialState,
         ...StoreAction(initialState),
-        getUserInfo() {},
+        recordUserInfo() {},
     }));
 
     return store;

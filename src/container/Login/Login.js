@@ -1,12 +1,25 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, TextInput } from 'react-native';
+import { StyleSheet, View, TextInput, ActivityIndicator } from 'react-native';
 import { Text, Input, Page, Button, Link } from '@components';
 import { observer } from 'mobx-react-lite';
 import { useStores } from '@store';
 import PhoneAuthentication from '../SignUp/pages/PhoneAuthentication';
 import { Actions } from 'react-native-router-flux';
+import { useMutation } from '@apollo/client';
+import tw from 'twrnc';
+import { LOGIN } from './gql/mutation';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Login = () => {
+    const [login, { loading, error }] = useMutation(LOGIN);
+
+    const {
+        LoginStore: {
+            paramsUpdate,
+            params: { userName, password },
+        },
+    } = useStores();
+    console.log('loading>', loading);
     return (
         <Page>
             <View style={styles.container}>
@@ -15,9 +28,32 @@ const Login = () => {
                         Pretty Face
                     </Text>
                 </View>
-                <Input placeholder="Username" />
-                <Input placeholder="Password" />
-                <Button style={styles.button}>Login</Button>
+                <Input
+                    placeholder="Username"
+                    onChangeText={text => paramsUpdate('userName', text)}
+                    value={userName}
+                />
+                <Input
+                    placeholder="Password"
+                    secureTextEntry
+                    onChangeText={text => paramsUpdate('password', text)}
+                    value={password}
+                />
+                <Button
+                    style={styles.button}
+                    onPress={async () => {
+                        const res = await login({
+                            variables: { userName, password },
+                        });
+                        const token = res.data.login.token;
+                        if (token) {
+                            console.log(token);
+                            AsyncStorage.setItem('token', token);
+                        }
+                    }}>
+                    Login
+                </Button>
+                {loading && <ActivityIndicator style={tw`pt-5`} size="large" />}
             </View>
             <View style={styles.signupContainer}>
                 <Text style={{ marginRight: 5 }}>Don't have account?</Text>
