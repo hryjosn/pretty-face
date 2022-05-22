@@ -6,16 +6,9 @@ export const GET_MY_INFO = /* GraphQL */ gql`
             portrait {
                 url
             }
+            phone
             userName
             id
-            follower {
-                id
-                userName
-            }
-            followed {
-                id
-                userName
-            }
         }
     }
 `;

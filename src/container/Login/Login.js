@@ -19,7 +19,7 @@ const Login = () => {
             params: { userName, password },
         },
     } = useStores();
-    console.log('loading>', loading);
+
     return (
         <Page>
             <View style={styles.container}>
@@ -47,8 +47,8 @@ const Login = () => {
                         });
                         const token = res.data.login.token;
                         if (token) {
-                            console.log(token);
-                            AsyncStorage.setItem('token', token);
+                            await AsyncStorage.setItem('token', token);
+                            Actions.replace('Home');
                         }
                     }}>
                     Login

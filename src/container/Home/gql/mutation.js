@@ -1,13 +1,22 @@
 import { gql } from '@apollo/client';
-export const LOGIN = gql`
-    mutation Login($userName: String!, $password: String!) {
-        login(userName: $userName, password: $password) {
-            token
-            user {
+export const FOLLOW = gql`
+    mutation Follow($followedId: ID!) {
+        follow(followedId: $followedId) {
+            followed {
                 id
                 userName
-                email
             }
+            follower {
+                id
+                userName
+            }
+        }
+    }
+`;
+export const UNFOLLOW = gql`
+    mutation Unfollow($followedId: ID!) {
+        unfollow(followedId: $followedId) {
+            id
         }
     }
 `;

@@ -1,5 +1,12 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity, Text, Image } from 'react-native';
+import {
+    View,
+    StyleSheet,
+    TouchableOpacity,
+    Text,
+    Image,
+    ActivityIndicator,
+} from 'react-native';
 import { Button, Header } from '@components';
 import { useStores } from '@store';
 import Page from '@components/Page/Page';
@@ -9,28 +16,21 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { restaurantSample } from '@image';
 import { useQuery } from '@apollo/client';
 import { GET_MY_INFO } from './gql';
+import tw from 'twrnc';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 const Profile = () => {
-    const {
-        loading,
-        error,
-        data: {
-            me: {
-                userName,
-                phone,
-                portrait: { url },
-            },
-        },
-    } = useQuery(GET_MY_INFO);
+    const { loading, error, data } = useQuery(GET_MY_INFO);
     const { SignUpStore } = useStores();
     const { handleSignOut, avatarUrl, publicId } = SignUpStore;
-
+    if (loading) return <ActivityIndicator style={tw`pt-5`} size="large" />;
     return (
         <Page>
             <Header headerText={'Profile'} />
             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                 <Image
                     source={{
-                        uri: avatarUrl,
+                        uri: data.me.portrait.url,
                     }}
                     style={{ width: '100%', height: 400 }}
                 />
@@ -38,10 +38,10 @@ const Profile = () => {
             <View style={styles.container}>
                 <View style={{ alignItems: 'center' }}>
                     <Text style={{ fontSize: 20, marginTop: 20 }}>
-                        Name : {userName}
+                        Name : {data.me.userName}
                     </Text>
                     <Text style={{ fontSize: 20, marginTop: 20 }}>
-                        Phone :{phone}
+                        Phone :{data.me.phone}
                     </Text>
                 </View>
             </View>
@@ -54,8 +54,9 @@ const Profile = () => {
                 </Button>
                 <Button
                     style={{ marginVertical: 20 }}
-                    onPress={() => {
-                        handleSignOut();
+                    onPress={async () => {
+                        await AsyncStorage.clear();
+                        Actions.replace('Login');
                     }}>
                     Sign Out
                 </Button>
