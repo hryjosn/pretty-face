@@ -1,27 +1,27 @@
 import gql from 'graphql-tag';
 
-export const GET_MY_POST_LIST = /* GraphQL */ gql`
-    query GetMyPostList {
-        getMyPostList {
-            updatedAt
-            caption
-            img {
+export const GET_VERIFY_USERS = /* GraphQL */ gql`
+    {
+        getVerifyUsers {
+            id
+            portrait {
                 url
+            }
+            userName
+            followed {
+                id
+                followedId
             }
         }
     }
 `;
-export const GET_POST_LIST = /* GraphQL */ gql`
-    query GetPostList {
-        getPostList {
-            author {
+export const GET_FOLLOWED_LIST = /* GraphQL */ gql`
+    {
+        getFollowedList {
+            followedId
+            followed {
                 userName
             }
-            updatedAt
-            img {
-                url
-            }
-            caption
         }
     }
 `;

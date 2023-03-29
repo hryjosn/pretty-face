@@ -5,4 +5,6 @@ import Header from './Header';
 import Page from './Page';
 import IconInput from './IconInput';
 import Link from './Link';
-export { Button, Input, Text, Page, Header, IconInput, Link };
+import Modal from './Modal';
+import Card from './Card';
+export { Button, Input, Text, Page, Header, IconInput, Link, Modal, Card };

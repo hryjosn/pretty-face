@@ -7,6 +7,7 @@ import SignUp from '@container/SignUp';
 import CheckUsername from '@container/SignUp/pages/CheckUsername';
 import Profile from '@container/Profile';
 import Home from '@container/Home';
+import Post from '@container/Post';
 import VerifyAuth from '@container/VerifyAuth';
 import Verify from '@container/Verify';
 import Invitation from '@container/Invitation';
@@ -73,7 +74,6 @@ const SceneRouter = () => {
                         inactiveTintColor="#7F7F7F"
                         labelStyle={{ fontWeight: '800', fontSize: 16 }}
                         tabBarStyle={{
-                            paddingTop: 5,
                             backgroundColor: 'white',
                         }}>
                         <Scene
@@ -94,6 +94,13 @@ const SceneRouter = () => {
                                 component={Home}
                                 hideNavBar
                                 initial
+                            />
+
+                            <Scene
+                                key="Post"
+                                component={Post}
+                                initial
+                                hideNavBar
                             />
                         </Scene>
                         <Scene

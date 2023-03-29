@@ -4,33 +4,23 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import { observer } from 'mobx-react-lite';
 import { useStores } from '@store';
 import { Actions } from 'react-native-router-flux';
-
 import Text from '../Text';
+import tw from 'twrnc';
 
-const Header = ({ headerText, Right, Left }) => {
+const Header = ({ headerText, Right, Left, children }) => {
     return (
-        <View style={styles.container}>
-            {!Actions.state.index ? (
-                <TouchableOpacity
-                    onPress={() => {
-                        Actions.pop();
-                    }}>
-                    <View style={{ paddingLeft: 10 }}>
-                        <Icon name="left" size={30} color="black" />
-                    </View>
-                </TouchableOpacity>
-            ) : (
-                <View style={styles.emptyBox} />
-            )}
+        <View
+            style={tw`flex-row justify-between items-center px-3 border-b-2 border-gray-200`}>
+            <View style={styles.emptyBox} />
 
-            {headerText && (
+            {children && (
                 <View style={{ justifyContent: 'center' }}>
                     <Text
                         style={{
                             fontSize: 20,
                             fontWeight: '500',
                         }}>
-                        {headerText}
+                        {children}
                     </Text>
                 </View>
             )}
@@ -43,11 +33,5 @@ export default observer(Header);
 const styles = StyleSheet.create({
     emptyBox: {
         width: 45,
-    },
-    container: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        paddingVertical: 10,
-        alignItems: 'center',
     },
 });

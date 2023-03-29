@@ -10,11 +10,13 @@ import {
 import { createUploadLink } from 'apollo-upload-client';
 import { setContext } from '@apollo/client/link/context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { LogBox } from 'react-native';
 
 const httpLink = createHttpLink({
     uri: 'http://localhost:4000/graphql',
 });
-console.disableYellowBox = true;
+LogBox.ignoreAllLogs();
+
 const authLink = setContext(async (_, { headers }) => {
     // get the authentication token from local storage if it exists
     const token = await AsyncStorage.getItem('token');
@@ -32,8 +34,8 @@ const link = createUploadLink({ uri: 'http://localhost:4000/graphql' });
 const client = new ApolloClient({
     connectToDevTools: true,
     cache: new InMemoryCache(),
-    uri: 'http://localhost:4000/graphql',
     link: authLink.concat(httpLink),
+    // link,
 });
 const App = () => {
     if (window.__REMOTEDEV__) {

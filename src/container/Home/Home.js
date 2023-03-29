@@ -13,35 +13,36 @@ import { useStores } from '@store';
 import Page from '@components/Page/Page';
 import { observer } from 'mobx-react-lite';
 import { useQuery, useMutation } from '@apollo/client';
-import {
-    GET_VERIFY_USERS,
-    FOLLOW,
-    UNFOLLOW,
-    GET_MY_INFO,
-    GET_FOLLOWED_LIST,
-} from './gql';
+import { GET_MY_POST_LIST, GET_POST_LIST } from './gql';
 import tw from 'twrnc';
-const Verify = () => {
-    const { head, container, followText } = styles;
-    const {
-        loading: verifyUserLoading,
-        error,
-        data,
-    } = useQuery(GET_VERIFY_USERS);
-    console.log('data>', data);
-    const {
-        data: followedList,
-        loading: followedListLoading,
-        refetch,
-    } = useQuery(GET_FOLLOWED_LIST);
+import Icon from 'react-native-vector-icons/Ionicons';
+import { Actions } from 'react-native-router-flux';
+import Post from '@container/Post';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-    const [follow] = useMutation(FOLLOW);
-    const [unfollow] = useMutation(UNFOLLOW);
-    console.log('followedList>', followedList);
+const Home = () => {
+    const {
+        PostStore: { openModal, visible },
+    } = useStores();
+    const { head, container, followText } = styles;
+
+    // const {
+    //     data: postList,
+    //     loading: followedListLoading,
+    //     refetch,
+    // } = useQuery(GET_MY_POST_LIST);
+    const { data: postList, error, loading, refetch } = useQuery(GET_POST_LIST);
+    console.log('postList>', postList);
+    useEffect(() => {
+        if (error?.message === 'Context creation failed: jwt expired') {
+            AsyncStorage.clear();
+        }
+    }, []);
     const renderItem = ({
         item: {
-            portrait: { url },
-            userName,
+            img: { url },
+            author: { userName },
+            caption,
             id,
         },
     }) => {
@@ -63,28 +64,44 @@ const Verify = () => {
                         }}
                     />
                 </View>
+                <Text style={head}>{userName}</Text>
+                <Text>{caption}</Text>
             </View>
         );
     };
-    if (verifyUserLoading || followedListLoading)
-        return <ActivityIndicator style={tw`pt-5`} size="large" />;
-
+    if (loading)
+        return (
+            <Page>
+                <Text>Loading</Text>
+            </Page>
+        );
     return (
         <Page>
-            <View>
+            <Header
+                Right={() => (
+                    <TouchableOpacity
+                        onPress={() => {
+                            openModal();
+                        }}>
+                        <Icon name="add" size={40} color="black" />
+                    </TouchableOpacity>
+                )}>
+                Pretty Face
+            </Header>
+
+            <View style={tw`grow`}>
                 <FlatList
-                    data={data.getVerifyUsers.filter(
-                        item => !item.followed.length,
-                    )}
+                    data={postList.getPostList}
                     renderItem={renderItem}
                     keyExtractor={item => item.id}
                 />
             </View>
+            <Post />
         </Page>
     );
 };
 
-export default observer(Verify);
+export default observer(Home);
 
 const styles = StyleSheet.create({
     container: {
